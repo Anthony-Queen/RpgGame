@@ -11,6 +11,22 @@ region = Rect2(0, 0, 32, 32)
 atlas = ExtResource("1_yg8f4")
 region = Rect2(64, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1blp"]
+atlas = ExtResource("1_yg8f4")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4d6p"]
+atlas = ExtResource("1_yg8f4")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hgwu"]
+atlas = ExtResource("1_yg8f4")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwavb"]
+atlas = ExtResource("1_yg8f4")
+region = Rect2(32, 96, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_jouls"]
 atlas = ExtResource("1_yg8f4")
 region = Rect2(0, 32, 32, 32)
@@ -58,6 +74,38 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_u1blp")
+}],
+"loop": true,
+"name": &"Idle_Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4d6p")
+}],
+"loop": true,
+"name": &"Idle_Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hgwu")
+}],
+"loop": true,
+"name": &"Idle_Right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwavb")
+}],
+"loop": true,
+"name": &"Idle_Up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_jouls")
 }, {
 "duration": 1.0,
@@ -101,6 +149,7 @@ radius = 5.0
 height = 16.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1667957523]
+z_index = 1
 texture_filter = 1
 position = Vector2(-1, 3)
 script = ExtResource("1_hiq6t")
@@ -108,11 +157,11 @@ metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1249837389]
 sprite_frames = SubResource("SpriteFrames_b4d6p")
-animation = &"Up"
+animation = &"Idle_Left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=937800068]
 position = Vector2(0, -3)
 shape = SubResource("CapsuleShape2D_u1blp")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1577613764]
-zoom = Vector2(2, 2)
+zoom = Vector2(2.5, 2.5)
