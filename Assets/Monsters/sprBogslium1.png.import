@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlaq3f3hiu07f"
-path="res://.godot/imported/godotwaka.png-ef0518417b4f997d237759e5551dd05d.ctex"
+uid="uid://desjlov6qfm1p"
+path="res://.godot/imported/sprBogslium1.png-634e6df1b0e7a6c128850a8428d90cb7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/godotwaka.png"
-dest_files=["res://.godot/imported/godotwaka.png-ef0518417b4f997d237759e5551dd05d.ctex"]
+source_file="res://Assets/Monsters/sprBogslium1.png"
+dest_files=["res://.godot/imported/sprBogslium1.png-634e6df1b0e7a6c128850a8428d90cb7.ctex"]
 
 [params]
 

@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://djgfplha35meq" path="res://Game/Player.tscn" id="1_pkw43"]
 [ext_resource type="Texture2D" uid="uid://ttb2lhrdm832" path="res://Assets/TopDownFantasy-Forest/Tiles/Tileset.png" id="1_vdl71"]
+[ext_resource type="PackedScene" uid="uid://kjfnrdewni3" path="res://Game/Goblin1.tscn" id="3_52hkl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vdl71"]
 texture = ExtResource("1_vdl71")
@@ -166,4 +167,7 @@ tile_map_data = PackedByteArray("AAD9/wQAAAAEAAUAAAD+/wQAAAAEAAUAAAD//wQAAAAEAAU
 tile_set = SubResource("TileSet_pkw43")
 
 [node name="Player" parent="." unique_id=1667957523 instance=ExtResource("1_pkw43")]
-position = Vector2(-8, 119)
+position = Vector2(-77, 116)
+
+[node name="Goblin1" parent="." unique_id=2031590329 instance=ExtResource("3_52hkl")]
+position = Vector2(21, 114)

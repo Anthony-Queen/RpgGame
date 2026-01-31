@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7d4g5thmbwjj"
-path="res://.godot/imported/godotwaka2.png-7d3d010fb4adc0d433467ab1cc4754ed.ctex"
+uid="uid://dqq4cpw1y0011"
+path="res://.godot/imported/sprSkeleton3.png-a262e98d551a8a391cd415e256616db3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/godotwaka2.png"
-dest_files=["res://.godot/imported/godotwaka2.png-7d3d010fb4adc0d433467ab1cc4754ed.ctex"]
+source_file="res://Assets/Monsters/sprSkeleton3.png"
+dest_files=["res://.godot/imported/sprSkeleton3.png-a262e98d551a8a391cd415e256616db3.ctex"]
 
 [params]
 
