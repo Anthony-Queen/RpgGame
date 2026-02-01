@@ -1,14 +1,40 @@
 [gd_scene format=3 uid="uid://c5lsir4sxml5t"]
 
+[ext_resource type="Texture2D" uid="uid://bn5ja5bj1u28h" path="res://Assets/Original/RPGBattlefield.png" id="1_n5k1x"]
+[ext_resource type="Texture2D" uid="uid://4yk5mqpb4a5l" path="res://Assets/Original/NinePatch.jpeg" id="2_d08l8"]
+
 [node name="Battle" type="Control" unique_id=2064734030]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 1.108
+anchor_bottom = 1.139
+offset_right = -127.416016
+offset_bottom = 92.92798
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_group_ = true
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=373018051]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=418438960]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1149.0
+offset_bottom = 648.0
+texture = ExtResource("1_n5k1x")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1071710441]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -183.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer" unique_id=1550719153]
+layout_mode = 2
+texture = ExtResource("2_d08l8")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 3
+patch_margin_top = 8
+patch_margin_right = 3
+patch_margin_bottom = 7
