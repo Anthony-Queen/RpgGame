@@ -5,6 +5,8 @@ var currentState = State.Exploring
 var max_speed = 200
 var last_direction := Vector2(1,0)
 var isEnemyDead = false
+var attacks: Array[Attack] = []
+const MAX_ATTACKS := 4
 
 func _physics_process(delta):
 	var direction = Input.get_vector("left", "right", "up", "down")
@@ -55,3 +57,7 @@ func onEnemy():
 func exit_combat():
 	if isEnemyDead:
 		currentState = State.Exploring
+
+func add_attack(a: Attack):
+	if attacks.size() < MAX_ATTACKS:
+		attacks.append(a)

@@ -1,26 +1,26 @@
 [gd_scene format=3 uid="uid://c5lsir4sxml5t"]
 
+[ext_resource type="Script" uid="uid://ctj8obagincqp" path="res://Game/battle.gd" id="1_d08l8"]
 [ext_resource type="Texture2D" uid="uid://bn5ja5bj1u28h" path="res://Assets/Original/RPGBattlefield.png" id="1_n5k1x"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ohkfk"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n5k1x"]
 bg_color = Color(0, 0, 0, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(1.353256, 1.353256, 1.353256, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vnbil"]
-bg_color = Color(0, 0, 0, 1)
-corner_radius_bottom_left = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n5k1x"]
 bg_color = Color(0, 0, 0, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ayagu"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.7372549, 0.007843138, 0, 1)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ohkfk"]
 
@@ -32,56 +32,86 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(1, 1, 1, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_me0kk"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.13333334, 0.9372549, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tn33h"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ckcf0"]
+bg_color = Color(1, 0.2627451, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ohkfk"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_detail = 1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n5k1x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d08l8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vnbil"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ayagu"]
+
 [node name="Battle" type="Control" unique_id=2064734030]
 layout_mode = 3
-anchor_right = 1.0
-anchor_bottom = 1.2820001
-offset_right = -3.0
-offset_bottom = 0.26397705
+anchor_right = 1.245
+anchor_bottom = 1.2420001
+offset_right = 3.7600098
+offset_bottom = 0.18395996
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_d08l8")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=243290625]
+position = Vector2(716, 402)
+zoom = Vector2(0.8, 0.8)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=418438960]
 layout_mode = 0
-offset_right = 1149.0
-offset_bottom = 648.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 1431.0
+offset_bottom = 805.0
 texture = ExtResource("1_n5k1x")
 expand_mode = 1
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1998117558]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 249.0
-offset_top = 150.5
-offset_right = 5.0
-offset_bottom = 333.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Panel" type="Panel" parent="HBoxContainer2" unique_id=2113154950]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_ohkfk")
-
-[node name="Mrow" type="VBoxContainer" parent="." unique_id=1972287415]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1972287415]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -263.0
-offset_right = 248.0
-offset_bottom = -83.0
+offset_top = -256.0
+offset_right = 272.0
+offset_bottom = -2.0
 grow_vertical = 0
 
-[node name="Panel" type="Panel" parent="Mrow" unique_id=72536442]
+[node name="Panel" type="Panel" parent="VBoxContainer" unique_id=72536442]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_vnbil")
+theme_override_styles/panel = SubResource("StyleBoxFlat_n5k1x")
 
-[node name="Attack" type="Button" parent="Mrow/Panel" unique_id=675999497]
+[node name="Attack" type="Button" parent="VBoxContainer/Panel" unique_id=675999497]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -90,11 +120,12 @@ offset_top = 1.0
 offset_right = -2.0
 offset_bottom = -0.020000458
 theme_override_font_sizes/font_size = 27
-theme_override_styles/normal = SubResource("StyleBoxFlat_n5k1x")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vnbil")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ayagu")
 text = "Attack"
 icon = SubResource("CanvasTexture_ohkfk")
 
-[node name="Guard" type="Button" parent="Mrow/Panel" unique_id=56450976]
+[node name="Guard" type="Button" parent="VBoxContainer/Panel" unique_id=56450976]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.25
@@ -104,9 +135,10 @@ offset_right = -0.01600647
 offset_bottom = -1.0
 theme_override_font_sizes/font_size = 27
 theme_override_styles/normal = SubResource("StyleBoxFlat_d08l8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_me0kk")
 text = "Guard"
 
-[node name="Item" type="Button" parent="Mrow/Panel" unique_id=962548397]
+[node name="Item" type="Button" parent="VBoxContainer/Panel" unique_id=962548397]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.5
@@ -118,10 +150,11 @@ offset_right = -2.0
 offset_bottom = 0.08000183
 theme_override_font_sizes/font_size = 28
 theme_override_styles/normal = SubResource("StyleBoxFlat_d08l8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_tn33h")
 text = "Item
 "
 
-[node name="Special" type="Button" parent="Mrow/Panel" unique_id=628069612]
+[node name="Special" type="Button" parent="VBoxContainer/Panel" unique_id=628069612]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.75600004
@@ -133,4 +166,88 @@ offset_right = -0.01600647
 offset_bottom = -0.08000183
 theme_override_font_sizes/font_size = 28
 theme_override_styles/normal = SubResource("StyleBoxFlat_d08l8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ckcf0")
 text = "Special"
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=238621733]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 274.0
+offset_top = -260.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ohkfk")
+
+[node name="AttackPanel" type="Panel" parent="PanelContainer" unique_id=1493199878]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_n5k1x")
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/AttackPanel" unique_id=1784919841]
+layout_direction = 3
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 386.0
+grow_vertical = 2
+columns = 2
+
+[node name="Button" type="Button" parent="PanelContainer/AttackPanel/GridContainer" unique_id=964089352]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxFlat_vnbil")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ayagu")
+text = "Attack"
+icon = SubResource("CanvasTexture_ohkfk")
+
+[node name="Button2" type="Button" parent="PanelContainer/AttackPanel/GridContainer" unique_id=1818115419]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxFlat_vnbil")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ayagu")
+text = "Attack"
+icon = SubResource("CanvasTexture_ohkfk")
+
+[node name="Button3" type="Button" parent="PanelContainer/AttackPanel/GridContainer" unique_id=503429961]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxFlat_vnbil")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ayagu")
+text = "Attack"
+icon = SubResource("CanvasTexture_ohkfk")
+
+[node name="Button4" type="Button" parent="PanelContainer/AttackPanel/GridContainer" unique_id=937978902]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxFlat_vnbil")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ayagu")
+text = "Attack"
+icon = SubResource("CanvasTexture_ohkfk")
+
+[node name="GuardPanel" type="Panel" parent="PanelContainer" unique_id=746554177]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_d08l8")
+
+[node name="ItemPanel" type="Panel" parent="PanelContainer" unique_id=1233575486]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vnbil")
+
+[node name="SpecialPanel" type="Panel" parent="PanelContainer" unique_id=564589658]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ayagu")
+
+[connection signal="pressed" from="VBoxContainer/Panel/Attack" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="VBoxContainer/Panel/Guard" to="." method="_on_guard_pressed"]
+[connection signal="pressed" from="VBoxContainer/Panel/Item" to="." method="_on_item_pressed"]
+[connection signal="pressed" from="VBoxContainer/Panel/Special" to="." method="_on_special_pressed"]
