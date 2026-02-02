@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4yk5mqpb4a5l"
-path="res://.godot/imported/NinePatch.jpeg-c3457b8bddd92af237012b94cf134ed0.ctex"
+uid="uid://cd3x6ahr1e1vo"
+path="res://.godot/imported/NinePatch.png-dbcb6eddc82fa086a049fc76f7387571.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Original/NinePatch.jpeg"
-dest_files=["res://.godot/imported/NinePatch.jpeg-c3457b8bddd92af237012b94cf134ed0.ctex"]
+source_file="res://Assets/Original/NinePatch.png"
+dest_files=["res://.godot/imported/NinePatch.png-dbcb6eddc82fa086a049fc76f7387571.ctex"]
 
 [params]
 

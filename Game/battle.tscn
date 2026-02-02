@@ -1,17 +1,45 @@
 [gd_scene format=3 uid="uid://c5lsir4sxml5t"]
 
 [ext_resource type="Texture2D" uid="uid://bn5ja5bj1u28h" path="res://Assets/Original/RPGBattlefield.png" id="1_n5k1x"]
-[ext_resource type="Texture2D" uid="uid://4yk5mqpb4a5l" path="res://Assets/Original/NinePatch.jpeg" id="2_d08l8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ohkfk"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1.353256, 1.353256, 1.353256, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vnbil"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n5k1x"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ohkfk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d08l8"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
 
 [node name="Battle" type="Control" unique_id=2064734030]
 layout_mode = 3
-anchor_right = 1.108
-anchor_bottom = 1.139
-offset_right = -127.416016
-offset_bottom = 92.92798
+anchor_right = 1.0
+anchor_bottom = 1.2820001
+offset_right = -3.0
+offset_bottom = 0.26397705
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_group_ = true
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=418438960]
 layout_mode = 0
@@ -20,21 +48,89 @@ offset_bottom = 648.0
 texture = ExtResource("1_n5k1x")
 expand_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1071710441]
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1998117558]
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
+anchors_preset = 14
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -183.0
+anchor_bottom = 0.5
+offset_left = 249.0
+offset_top = 150.5
+offset_right = 5.0
+offset_bottom = 333.5
 grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="HBoxContainer2" unique_id=2113154950]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_ohkfk")
+
+[node name="Mrow" type="VBoxContainer" parent="." unique_id=1972287415]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -263.0
+offset_right = 248.0
+offset_bottom = -83.0
 grow_vertical = 0
 
-[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer" unique_id=1550719153]
+[node name="Panel" type="Panel" parent="Mrow" unique_id=72536442]
 layout_mode = 2
-texture = ExtResource("2_d08l8")
-region_rect = Rect2(0, 0, 32, 32)
-patch_margin_left = 3
-patch_margin_top = 8
-patch_margin_right = 3
-patch_margin_bottom = 7
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_vnbil")
+
+[node name="Attack" type="Button" parent="Mrow/Panel" unique_id=675999497]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.23900001
+offset_top = 1.0
+offset_right = -2.0
+offset_bottom = -0.020000458
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxFlat_n5k1x")
+text = "Attack"
+icon = SubResource("CanvasTexture_ohkfk")
+
+[node name="Guard" type="Button" parent="Mrow/Panel" unique_id=56450976]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.25
+anchor_right = 0.99200004
+anchor_bottom = 0.5
+offset_right = -0.01600647
+offset_bottom = -1.0
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxFlat_d08l8")
+text = "Guard"
+
+[node name="Item" type="Button" parent="Mrow/Panel" unique_id=962548397]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.744
+offset_left = 1.0
+offset_top = 1.0
+offset_right = -2.0
+offset_bottom = 0.08000183
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_d08l8")
+text = "Item
+"
+
+[node name="Special" type="Button" parent="Mrow/Panel" unique_id=628069612]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.75600004
+anchor_right = 0.99200004
+anchor_bottom = 1.006
+offset_left = 1.0
+offset_top = -0.08000183
+offset_right = -0.01600647
+offset_bottom = -0.08000183
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_d08l8")
+text = "Special"
