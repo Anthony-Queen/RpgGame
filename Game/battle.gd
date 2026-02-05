@@ -1,7 +1,7 @@
 extends Control
+@onready var player = get_node("../../Player")
 
 func _ready():
-	var player = get_node("../Player")
 	player.combat_started.connect(on_combat_started)
 	hide()
 
@@ -13,7 +13,10 @@ func show_panel(name):
 
 func on_combat_started(enemy):
 	show()
+	player.set_physics_process(false)  # freeze player
+	$Camera2D.enabled = true 
 	print("Combat started")
+
 
 # Shows Panels when you press their correspective button >Mrrrow<
 func _on_attack_pressed() -> void:

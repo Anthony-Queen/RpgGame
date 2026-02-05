@@ -173,4 +173,10 @@ position = Vector2(-77, 116)
 [node name="Goblin1" parent="." unique_id=2031590329 instance=ExtResource("3_52hkl")]
 position = Vector2(21, 114)
 
-[node name="Battle" parent="." unique_id=2064734030 instance=ExtResource("1_kv37d")]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=662987847]
+
+[node name="Battle" parent="CanvasLayer" unique_id=2064734030 instance=ExtResource("1_kv37d")]
+offset_left = 17.0
+offset_top = 52.0
+offset_right = 20.76001
+offset_bottom = 52.18396
