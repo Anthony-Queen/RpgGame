@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://cmdkwetxbmq55"]
 
+[ext_resource type="PackedScene" uid="uid://c5lsir4sxml5t" path="res://Game/battle.tscn" id="1_kv37d"]
 [ext_resource type="PackedScene" uid="uid://djgfplha35meq" path="res://Game/Player.tscn" id="1_pkw43"]
 [ext_resource type="Texture2D" uid="uid://ttb2lhrdm832" path="res://Assets/TopDownFantasy-Forest/Tiles/Tileset.png" id="1_vdl71"]
 [ext_resource type="PackedScene" uid="uid://kjfnrdewni3" path="res://Game/Goblin1.tscn" id="3_52hkl"]
@@ -155,7 +156,7 @@ texture = ExtResource("1_vdl71")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_vdl71")
 
-[node name="Node2D" type="Node2D" unique_id=1259506398]
+[node name="Main" type="Node2D" unique_id=1259506398]
 position = Vector2(17, 52)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1833903220]
@@ -171,3 +172,5 @@ position = Vector2(-77, 116)
 
 [node name="Goblin1" parent="." unique_id=2031590329 instance=ExtResource("3_52hkl")]
 position = Vector2(21, 114)
+
+[node name="Battle" parent="." unique_id=2064734030 instance=ExtResource("1_kv37d")]

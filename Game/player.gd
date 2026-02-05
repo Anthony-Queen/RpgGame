@@ -7,8 +7,10 @@ var last_direction := Vector2(1,0)
 var isEnemyDead = false
 var attacks: Array[Attack] = []
 const MAX_ATTACKS := 4
+signal combat_started(enemy)
 
-func _physics_process(delta):
+
+func _physics_process(_delta):
 	var direction = Input.get_vector("left", "right", "up", "down")
 	velocity = direction * max_speed
 	move_and_slide()
@@ -44,10 +46,10 @@ func play_idle_animation(direction):
 
 func enter_combat(enemy):
 	currentState = State.Combat
-	print("Combat started with " + enemy.name)
+	emit_signal("combat_started", enemy) #Need to connect signal 2 Combat UI
 
 func onEnemy():
-	for i in get_slide_collision_count():
+	for i in range(get_slide_collision_count()):
 		var collision = get_slide_collision(i)
 		var body = collision.get_collider()
 		
