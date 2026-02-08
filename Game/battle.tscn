@@ -3,8 +3,16 @@
 [ext_resource type="Script" uid="uid://ctj8obagincqp" path="res://Game/battle.gd" id="1_d08l8"]
 [ext_resource type="Texture2D" uid="uid://bn5ja5bj1u28h" path="res://Assets/Original/RPGBattlefield.png" id="1_n5k1x"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n5k1x"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ohkfk"]
 bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_detail = 1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n5k1x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vnbil"]
 bg_color = Color(0, 0, 0, 1)
@@ -23,6 +31,15 @@ border_width_bottom = 2
 border_color = Color(0.7372549, 0.007843138, 0, 1)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ohkfk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d08l8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vnbil"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ayagu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n5k1x"]
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d08l8"]
 bg_color = Color(0, 0, 0, 1)
@@ -56,29 +73,23 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ohkfk"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(1, 1, 1, 1)
-corner_detail = 1
+[sub_resource type="Image" id="Image_d08l8"]
+data = {
+"data": PackedByteArray(81, 0, 0, 0, 81, 0, 0, 0, 81, 0, 0, 0, 81, 0, 0, 0, 81, 0, 0, 0, 60, 73, 119, 255, 60, 73, 119, 255, 60, 73, 119, 255, 60, 73, 119, 255, 60, 73, 119, 255, 60, 73, 119, 255, 81, 0, 0, 0, 81, 0, 0, 0, 81, 0, 0, 0, 81, 0, 0, 0, 81, 0, 0, 0, 81, 0, 0, 0, 81, 0, 0, 0, 81, 0, 0, 0, 81, 0, 0, 0, 60, 73, 119, 255, 222, 246, 245, 255, 222, 246, 245, 255, 44, 203, 222, 255, 44, 203, 222, 255, 222, 246, 245, 255, 222, 246, 245, 255, 60, 73, 119, 255, 81, 0, 0, 0, 81, 0, 0, 0, 81, 0, 0, 0, 81, 0, 0, 0, 81, 0, 0, 0, 81, 0, 0, 0, 81, 0, 0, 0, 60, 73, 119, 255, 222, 246, 245, 255, 222, 246, 245, 255, 222, 246, 245, 255, 222, 246, 245, 255, 222, 246, 245, 255, 222, 246, 245, 255, 222, 246, 245, 255, 222, 246, 245, 255, 60, 73, 119, 255, 81, 0, 0, 0, 81, 0, 0, 0, 81, 0, 0, 0, 81, 0, 0, 0, 81, 0, 0, 0, 60, 73, 119, 255, 222, 246, 245, 255, 222, 246, 245, 255, 222, 246, 245, 255, 222, 246, 245, 255, 222, 246, 245, 255, 222, 246, 245, 255, 222, 246, 245, 255, 222, 246, 245, 255, 222, 246, 245, 255, 222, 246, 245, 255, 60, 73, 119, 255, 81, 0, 0, 0, 81, 0, 0, 0, 81, 0, 0, 0, 81, 0, 0, 0, 60, 73, 119, 255, 222, 246, 245, 255, 222, 246, 245, 255, 222, 246, 245, 255, 60, 119, 167, 255, 222, 246, 245, 255, 60, 119, 167, 255, 222, 246, 245, 255, 222, 246, 245, 255, 222, 246, 245, 255, 222, 246, 245, 255, 60, 73, 119, 255, 81, 0, 0, 0, 81, 0, 0, 0, 94, 57, 69, 255, 94, 57, 69, 255, 60, 73, 119, 255, 222, 246, 245, 255, 222, 246, 245, 255, 222, 246, 245, 255, 44, 203, 222, 255, 244, 203, 160, 255, 237, 160, 96, 255, 60, 119, 167, 255, 222, 246, 245, 255, 222, 246, 245, 255, 222, 246, 245, 255, 60, 73, 119, 255, 94, 57, 69, 255, 94, 57, 69, 255, 94, 57, 69, 255, 244, 203, 160, 255, 244, 203, 160, 255, 190, 120, 88, 255, 222, 246, 245, 255, 0, 0, 0, 255, 0, 0, 0, 255, 244, 203, 160, 255, 244, 203, 160, 255, 0, 0, 0, 255, 0, 0, 0, 255, 222, 246, 245, 255, 190, 120, 88, 255, 244, 203, 160, 255, 244, 203, 160, 255, 94, 57, 69, 255, 81, 0, 0, 0, 0, 0, 0, 255, 190, 120, 88, 255, 121, 70, 75, 255, 60, 119, 167, 255, 206, 197, 183, 255, 0, 0, 0, 255, 244, 203, 160, 255, 244, 203, 160, 255, 0, 0, 0, 255, 206, 197, 183, 255, 60, 119, 167, 255, 121, 70, 75, 255, 190, 120, 88, 255, 0, 0, 0, 255, 81, 0, 0, 0, 81, 0, 0, 0, 0, 0, 0, 255, 222, 246, 245, 255, 44, 203, 222, 255, 44, 203, 222, 255, 255, 255, 255, 255, 244, 179, 33, 255, 244, 203, 160, 255, 244, 203, 160, 255, 244, 179, 33, 255, 255, 255, 255, 255, 44, 203, 222, 255, 44, 203, 222, 255, 222, 246, 245, 255, 0, 0, 0, 255, 81, 0, 0, 0, 81, 0, 0, 0, 73, 49, 62, 255, 121, 70, 75, 255, 121, 70, 75, 255, 190, 120, 88, 255, 244, 203, 160, 255, 244, 203, 160, 255, 244, 203, 160, 255, 244, 203, 160, 255, 244, 203, 160, 255, 244, 203, 160, 255, 44, 203, 222, 255, 44, 203, 222, 255, 222, 246, 245, 255, 0, 0, 0, 255, 81, 0, 0, 0, 73, 49, 62, 255, 121, 70, 75, 255, 121, 70, 75, 255, 244, 179, 33, 255, 0, 0, 0, 255, 190, 120, 88, 255, 237, 160, 96, 255, 244, 203, 160, 255, 244, 203, 160, 255, 237, 160, 96, 255, 190, 120, 88, 255, 44, 203, 222, 255, 60, 119, 167, 255, 44, 203, 222, 255, 0, 0, 0, 255, 81, 0, 0, 0, 0, 0, 0, 255, 244, 179, 33, 255, 244, 179, 33, 255, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 62, 88, 87, 255, 244, 125, 33, 255, 121, 70, 75, 255, 60, 122, 70, 255, 62, 88, 87, 255, 0, 0, 0, 255, 94, 57, 69, 255, 0, 0, 0, 255, 81, 0, 0, 0, 81, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 94, 57, 69, 255, 237, 160, 96, 255, 94, 57, 69, 255, 111, 169, 55, 255, 111, 169, 55, 255, 244, 179, 33, 255, 60, 122, 70, 255, 111, 169, 55, 255, 111, 169, 55, 255, 94, 57, 69, 255, 237, 160, 96, 255, 94, 57, 69, 255, 81, 0, 0, 0, 81, 0, 0, 0, 81, 0, 0, 0, 60, 52, 76, 255, 244, 203, 160, 255, 244, 203, 160, 255, 94, 57, 69, 255, 168, 61, 61, 255, 229, 74, 50, 255, 229, 74, 50, 255, 229, 74, 50, 255, 168, 61, 61, 255, 168, 61, 61, 255, 94, 57, 69, 255, 244, 203, 160, 255, 244, 203, 160, 255, 60, 52, 76, 255, 81, 0, 0, 0, 81, 0, 0, 0, 0, 0, 0, 255, 244, 203, 160, 255, 244, 203, 160, 255, 60, 122, 70, 255, 111, 169, 55, 255, 111, 169, 55, 255, 244, 125, 33, 255, 244, 125, 33, 255, 111, 169, 55, 255, 111, 169, 55, 255, 62, 88, 87, 255, 244, 203, 160, 255, 244, 203, 160, 255, 0, 0, 0, 255, 81, 0, 0, 0, 81, 0, 0, 0, 81, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 94, 57, 69, 255, 94, 57, 69, 255, 73, 49, 62, 255, 0, 0, 0, 255, 73, 49, 62, 255, 94, 57, 69, 255, 94, 57, 69, 255, 73, 49, 62, 255, 0, 0, 0, 255, 0, 0, 0, 255, 81, 0, 0, 0, 81, 0, 0, 0, 81, 0, 0, 0, 81, 0, 0, 0, 81, 0, 0, 0, 0, 0, 0, 255, 237, 160, 96, 255, 237, 160, 96, 255, 237, 160, 96, 255, 0, 0, 0, 255, 0, 0, 0, 255, 190, 120, 88, 255, 237, 160, 96, 255, 237, 160, 96, 255, 0, 0, 0, 255, 81, 0, 0, 0, 81, 0, 0, 0, 81, 0, 0, 0, 81, 0, 0, 0, 81, 0, 0, 0, 81, 0, 0, 0, 81, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 81, 0, 0, 0, 81, 0, 0, 0, 0, 0, 0, 255, 0, 0, 0, 255, 0, 0, 0, 255, 81, 0, 0, 0, 81, 0, 0, 0, 81, 0, 0, 0, 81, 0, 0, 0),
+"format": "RGBA8",
+"height": 18,
+"mipmaps": false,
+"width": 16
+}
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n5k1x"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d08l8"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vnbil"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ayagu"]
+[sub_resource type="ImageTexture" id="ImageTexture_d08l8"]
+image = SubResource("Image_d08l8")
 
 [node name="Battle" type="Control" unique_id=2064734030]
 layout_mode = 3
-anchor_right = 0.91
-anchor_bottom = 0.91200006
-offset_right = -0.32006836
-offset_bottom = 0.023986816
+anchor_right = 0.9990001
+anchor_bottom = 1.0
+offset_right = 0.15185547
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_d08l8")
@@ -95,91 +106,17 @@ offset_bottom = -0.22705078
 texture = ExtResource("1_n5k1x")
 expand_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1972287415]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.726
-anchor_right = 0.291
-anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -0.06600952
-offset_right = 0.031982422
-offset_bottom = -5.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Panel" type="Panel" parent="VBoxContainer" unique_id=72536442]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_n5k1x")
-
-[node name="Attack" type="Button" parent="VBoxContainer/Panel" unique_id=675999497]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.23900001
-offset_top = 1.0
-offset_right = -2.0
-offset_bottom = -0.020000458
-theme_override_font_sizes/font_size = 27
-theme_override_styles/normal = SubResource("StyleBoxFlat_vnbil")
-theme_override_styles/focus = SubResource("StyleBoxFlat_ayagu")
-text = "Attack"
-icon = SubResource("CanvasTexture_ohkfk")
-
-[node name="Guard" type="Button" parent="VBoxContainer/Panel" unique_id=56450976]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.25
-anchor_right = 0.99200004
-anchor_bottom = 0.5
-offset_right = -0.01600647
-offset_bottom = -1.0
-theme_override_font_sizes/font_size = 27
-theme_override_styles/normal = SubResource("StyleBoxFlat_d08l8")
-theme_override_styles/focus = SubResource("StyleBoxFlat_me0kk")
-text = "Guard"
-
-[node name="Item" type="Button" parent="VBoxContainer/Panel" unique_id=962548397]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.744
-offset_left = 1.0
-offset_top = 1.0
-offset_right = -2.0
-offset_bottom = 0.08000183
-theme_override_font_sizes/font_size = 28
-theme_override_styles/normal = SubResource("StyleBoxFlat_d08l8")
-theme_override_styles/focus = SubResource("StyleBoxFlat_tn33h")
-text = "Item
-"
-
-[node name="Special" type="Button" parent="VBoxContainer/Panel" unique_id=628069612]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.75600004
-anchor_right = 0.99200004
-anchor_bottom = 1.006
-offset_left = 1.0
-offset_top = -0.08000183
-offset_right = -0.01600647
-offset_bottom = -0.08000183
-theme_override_font_sizes/font_size = 28
-theme_override_styles/normal = SubResource("StyleBoxFlat_d08l8")
-theme_override_styles/focus = SubResource("StyleBoxFlat_ckcf0")
-text = "Special"
-
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=238621733]
+light_mask = 2
+visibility_layer = 2
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.291
-anchor_top = 0.726
+anchor_left = 0.666
+anchor_top = 0.731
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 0.031982422
-offset_top = -0.06600952
+offset_left = 0.43395996
+offset_top = 0.3119812
 offset_right = 4.0
 offset_bottom = 1.0
 grow_horizontal = 2
@@ -251,11 +188,107 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_vnbil")
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_ayagu")
 
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1972287415]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.409
+anchor_top = 0.731
+anchor_right = 0.66700006
+anchor_bottom = 1.0
+offset_left = 0.24099731
+offset_top = 5.311981
+offset_right = 0.28295898
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Panel" type="Panel" parent="VBoxContainer" unique_id=72536442]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_n5k1x")
+
+[node name="Attack" type="Button" parent="VBoxContainer/Panel" unique_id=675999497]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.23900001
+offset_top = 1.0
+offset_right = -2.0
+offset_bottom = -0.020000458
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxFlat_vnbil")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ayagu")
+text = "Attack"
+icon = SubResource("CanvasTexture_ohkfk")
+
+[node name="Guard" type="Button" parent="VBoxContainer/Panel" unique_id=56450976]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.25
+anchor_right = 0.99200004
+anchor_bottom = 0.5
+offset_right = -0.01600647
+offset_bottom = -1.0
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxFlat_d08l8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_me0kk")
+text = "Guard"
+
+[node name="Item" type="Button" parent="VBoxContainer/Panel" unique_id=962548397]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.744
+offset_left = 1.0
+offset_top = 1.0
+offset_right = -2.0
+offset_bottom = 0.08000183
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_d08l8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_tn33h")
+text = "Item
+"
+
+[node name="Special" type="Button" parent="VBoxContainer/Panel" unique_id=628069612]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.75600004
+anchor_right = 0.99200004
+anchor_bottom = 1.006
+offset_left = 1.0
+offset_top = -0.08000183
+offset_right = -0.01600647
+offset_bottom = -0.08000183
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_d08l8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ckcf0")
+text = "Special"
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1362310341]
 position = Vector2(-9, 0)
 offset = Vector2(10, 0)
 anchor_mode = 0
-zoom = Vector2(1.1, 1.1)
+
+[node name="Panel" type="Panel" parent="." unique_id=887399990]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.75000006
+anchor_right = 0.409
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -7.0000305
+offset_right = 0.24099731
+offset_bottom = -2.0
+
+[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=1355485650]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.36100003
+anchor_bottom = 1.0
+offset_right = -19.670013
+texture = SubResource("ImageTexture_d08l8")
 
 [connection signal="pressed" from="VBoxContainer/Panel/Attack" to="." method="_on_attack_pressed"]
 [connection signal="pressed" from="VBoxContainer/Panel/Guard" to="." method="_on_guard_pressed"]

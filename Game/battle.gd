@@ -4,8 +4,6 @@ extends Control
 func _ready():
 	player.combat_started.connect(on_combat_started)
 	hide()
-
-
 func show_panel(name):
 	for panel in $PanelContainer.get_children():
 		panel.visible = false
@@ -13,8 +11,7 @@ func show_panel(name):
 
 func on_combat_started(enemy):
 	show()
-	player.set_physics_process(false)  # freeze player
-	$Camera2D.enabled = true 
+	$Camera2D.make_current()
 	print("Combat started")
 
 
