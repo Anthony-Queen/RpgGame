@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://8hp6uuqe1bay"]
+
+[ext_resource type="Script" uid="uid://dl20o3w753u2w" path="res://data/level_system.gd" id="1_t2msn"]
+[ext_resource type="Script" uid="uid://cx2w1yyikilai" path="res://data/Attributes.gd" id="2_4pi3e"]
+[ext_resource type="Texture2D" uid="uid://x2jp4lpw272p" path="res://Assets/Bars/Frame.png" id="2_mlsfb"]
+[ext_resource type="Texture2D" uid="uid://cvmwsd1oogea4" path="res://Assets/Bars/GreenBar.png" id="3_4pi3e"]
+[ext_resource type="Script" uid="uid://jdv1cbyeqwpb" path="res://data/ClassData.gd" id="3_cd18r"]
+[ext_resource type="Script" uid="uid://tmx3dww0wp6a" path="res://data/LevelTable.gd" id="4_vf0k7"]
+
+[sub_resource type="Resource" id="Resource_cd18r"]
+script = ExtResource("2_4pi3e")
+strength = 1
+metadata/_custom_type_script = "uid://cx2w1yyikilai"
+
+[sub_resource type="Resource" id="Resource_vf0k7"]
+script = ExtResource("3_cd18r")
+metadata/_custom_type_script = "uid://jdv1cbyeqwpb"
+
+[sub_resource type="Resource" id="Resource_tqfnc"]
+script = ExtResource("4_vf0k7")
+base_xp = 10
+metadata/_custom_type_script = "uid://tmx3dww0wp6a"
+
+[node name="LevelSystem" type="Control" unique_id=1424181813]
+layout_mode = 3
+anchor_left = 0.13800001
+anchor_top = 0.73600006
+anchor_right = 0.40600002
+anchor_bottom = 0.84400004
+offset_left = 0.023986816
+offset_top = 0.07196045
+offset_right = 0.28796387
+offset_bottom = 0.08795166
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_t2msn")
+attribute_data = SubResource("Resource_cd18r")
+class_data = SubResource("Resource_vf0k7")
+level_table = SubResource("Resource_tqfnc")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1940746055]
+
+[node name="XpBar" type="TextureProgressBar" parent="UI" unique_id=30615954]
+texture_filter = 1
+anchors_preset = -1
+anchor_left = 0.13900001
+anchor_top = 0.735
+anchor_right = 0.39200002
+anchor_bottom = 0.83800006
+offset_left = -14.128021
+offset_top = -148.28
+offset_right = -160.58401
+offset_bottom = -70.02405
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2.5, 2.5)
+texture_under = ExtResource("2_mlsfb")
+texture_progress = ExtResource("3_4pi3e")
+
+[node name="LevelText" type="Label" parent="UI" unique_id=2098991036]
+anchors_preset = -1
+anchor_left = 0.093
+anchor_top = 0.73800004
+anchor_right = 0.39100003
+anchor_bottom = 0.832
+offset_left = 11.863998
+offset_top = 14.77597
+offset_right = -263.43204
+offset_bottom = -10.135986
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "1"
+horizontal_alignment = 2

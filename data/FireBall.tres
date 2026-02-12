@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Attack" format=3 uid="uid://g7vpguc3i8xo"]
+
+[ext_resource type="Script" uid="uid://1xkn688bayty" path="res://data/Attack.gd" id="1_m4rxt"]
+
+[resource]
+script = ExtResource("1_m4rxt")
+name = "FireBall"
+damage = 20
+mana = 10
+metadata/_custom_type_script = "uid://1xkn688bayty"

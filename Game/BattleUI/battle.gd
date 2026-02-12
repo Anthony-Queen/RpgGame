@@ -4,6 +4,8 @@ extends Control
 func _ready():
 	player.combat_started.connect(on_combat_started)
 	hide()
+	$Panel/LevelSystem/UI.hide()
+
 func show_panel(name):
 	for panel in $PanelContainer.get_children():
 		panel.visible = false
@@ -11,6 +13,7 @@ func show_panel(name):
 
 func on_combat_started(enemy):
 	show()
+	$Panel/LevelSystem/UI.show()
 	$Camera2D.make_current()
 	print("Combat started")
 

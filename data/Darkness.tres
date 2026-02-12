@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Attack" format=3 uid="uid://kqwgaf1xked1"]
+
+[ext_resource type="Script" uid="uid://1xkn688bayty" path="res://data/Attack.gd" id="1_j8yra"]
+
+[resource]
+script = ExtResource("1_j8yra")
+name = "Darkness"
+damage = 100
+mana = 50
+metadata/_custom_type_script = "uid://1xkn688bayty"
