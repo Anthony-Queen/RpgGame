@@ -1,8 +1,10 @@
 extends Control
-@onready var player = get_node("../../Player")
 
-func _ready():
-	player.combat_started.connect(on_combat_started)
+var player  # will be assigned from Main
+
+func init(_player):
+	player = _player
+	player.combat_started.connect(on_combat_started)  # safe now
 	hide()
 	$Panel/UI.hide()
 
@@ -14,11 +16,9 @@ func show_panel(name):
 func on_combat_started(enemy):
 	show()
 	$Panel/UI.show()
-	$Camera2D.make_current()
+	#$Camera2D.make_current()
 	print("Combat started")
 
-
-# Shows Panels when you press their correspective button >Mrrrow<
 func _on_attack_pressed() -> void:
 	show_panel("AttackPanel")
 

@@ -3,26 +3,21 @@
 [ext_resource type="Script" uid="uid://ctj8obagincqp" path="res://Game/BattleUI/battle.gd" id="1_d08l8"]
 [ext_resource type="Texture2D" uid="uid://bn5ja5bj1u28h" path="res://Assets/Original/RPGBattlefield.png" id="1_n5k1x"]
 [ext_resource type="Script" uid="uid://c84ixusg5ml40" path="res://Game/BattleUI/grid_container.gd" id="3_d08l8"]
-[ext_resource type="Texture2D" uid="uid://x2jp4lpw272p" path="res://Assets/Bars/Frame.png" id="4_ayagu"]
-[ext_resource type="Texture2D" uid="uid://cvmwsd1oogea4" path="res://Assets/Bars/GreenBar.png" id="5_me0kk"]
+[ext_resource type="Texture2D" uid="uid://x2jp4lpw272p" path="res://Assets/Bars/Frame.png" id="4_vnbil"]
+[ext_resource type="Texture2D" uid="uid://cvmwsd1oogea4" path="res://Assets/Bars/GreenBar.png" id="5_ayagu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ohkfk"]
 bg_color = Color(0, 0, 0, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(1, 1, 1, 1)
 corner_detail = 1
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n5k1x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vnbil"]
 bg_color = Color(0, 0, 0, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
 border_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ayagu"]
@@ -41,39 +36,39 @@ border_color = Color(0.7372549, 0.007843138, 0, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ayagu"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n5k1x"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_43d8c"]
 bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d08l8"]
 bg_color = Color(0, 0, 0, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
 border_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_me0kk"]
 bg_color = Color(0, 0, 0, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
 border_color = Color(0.13333334, 0.9372549, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tn33h"]
 bg_color = Color(0, 0, 0, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
 border_color = Color(0, 0, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ckcf0"]
 bg_color = Color(1, 0.2627451, 0, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
 border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Image" id="Image_ayagu"]
@@ -90,12 +85,10 @@ image = SubResource("Image_ayagu")
 
 [node name="Battle" type="Control" unique_id=2064734030]
 layout_mode = 3
-anchor_right = 0.9990001
-anchor_bottom = 1.0
-offset_left = -7.0
-offset_top = 20.0
-offset_right = -6.8481445
-offset_bottom = 20.0
+anchor_right = 1.0
+anchor_bottom = 1.003
+offset_right = 1.0
+offset_bottom = 0.05596924
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_d08l8")
@@ -106,25 +99,21 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.99700004
-offset_left = 3.0
-offset_right = 3.0
 offset_bottom = -0.22705078
 texture = ExtResource("1_n5k1x")
 expand_mode = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=238621733]
-light_mask = 2
-visibility_layer = 2
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.666
 anchor_top = 0.731
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 0.43395996
-offset_top = 0.3119812
-offset_right = 4.0
-offset_bottom = 1.0
+offset_left = -1.9039917
+offset_top = 1.4230042
+offset_right = -1.0
+offset_bottom = -1.888977
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ohkfk")
@@ -202,26 +191,27 @@ anchor_left = 0.409
 anchor_top = 0.731
 anchor_right = 0.66700006
 anchor_bottom = 1.0
-offset_left = 0.24099731
-offset_top = 5.311981
-offset_right = 0.28295898
-offset_bottom = -5.0
+offset_left = 1.1040039
+offset_top = 3.4230042
+offset_right = -1.0480347
+offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 0
 
 [node name="Panel" type="Panel" parent="VBoxContainer" unique_id=72536442]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_n5k1x")
+theme_override_styles/panel = SubResource("StyleBoxFlat_43d8c")
 
 [node name="Attack" type="Button" parent="VBoxContainer/Panel" unique_id=675999497]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.23900001
-offset_top = 1.0
+offset_left = 1.0
+offset_top = -2.0
 offset_right = -2.0
-offset_bottom = -0.020000458
+offset_bottom = 0.6529999
 theme_override_font_sizes/font_size = 27
 theme_override_styles/normal = SubResource("StyleBoxFlat_vnbil")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ayagu")
@@ -234,7 +224,9 @@ anchors_preset = -1
 anchor_top = 0.25
 anchor_right = 0.99200004
 anchor_bottom = 0.5
-offset_right = -0.01600647
+offset_left = 1.0
+offset_top = -3.0
+offset_right = -0.015991211
 offset_bottom = -1.0
 theme_override_font_sizes/font_size = 27
 theme_override_styles/normal = SubResource("StyleBoxFlat_d08l8")
@@ -248,7 +240,7 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.744
 offset_left = 1.0
-offset_top = 1.0
+offset_top = -2.0
 offset_right = -2.0
 offset_bottom = 0.08000183
 theme_override_font_sizes/font_size = 28
@@ -264,18 +256,13 @@ anchor_top = 0.75600004
 anchor_right = 0.99200004
 anchor_bottom = 1.006
 offset_left = 1.0
-offset_top = -0.08000183
-offset_right = -0.01600647
+offset_top = -2.0320282
+offset_right = -0.015991211
 offset_bottom = -0.08000183
 theme_override_font_sizes/font_size = 28
 theme_override_styles/normal = SubResource("StyleBoxFlat_d08l8")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ckcf0")
 text = "Special"
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1362310341]
-position = Vector2(-9, 0)
-offset = Vector2(10, 0)
-anchor_mode = 0
 
 [node name="Panel" type="Panel" parent="." unique_id=887399990]
 layout_mode = 1
@@ -283,10 +270,10 @@ anchors_preset = -1
 anchor_top = 0.75000006
 anchor_right = 0.409
 anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = -8.0000305
-offset_right = 0.24099731
-offset_bottom = -2.0
+offset_left = 3.0
+offset_top = -7.2500305
+offset_right = 2.2409973
+offset_bottom = -1.25
 
 [node name="TextureRect" type="TextureRect" parent="Panel" unique_id=1355485650]
 texture_filter = 1
@@ -300,44 +287,36 @@ texture = SubResource("ImageTexture_d08l8")
 [node name="UI" type="CanvasLayer" parent="Panel" unique_id=398717665]
 layer = 2
 
-[node name="XpBar" type="TextureProgressBar" parent="Panel/UI" unique_id=1229354692]
-texture_filter = 1
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/UI" unique_id=1120328489]
 anchors_preset = -1
-anchor_left = 0.135
-anchor_top = 0.772
-anchor_right = 0.40500003
-anchor_bottom = 0.85300004
-offset_left = -23.520004
-offset_top = -91.25601
-offset_right = -200.96005
-offset_bottom = -46.544006
-grow_horizontal = 2
-grow_vertical = 0
-scale = Vector2(2.5, 2.5)
-nine_patch_stretch = true
-stretch_margin_left = 130
-texture_under = ExtResource("4_ayagu")
-texture_progress = ExtResource("5_me0kk")
-metadata/_edit_use_anchors_ = true
-metadata/_edit_group_ = true
+anchor_left = 0.15300001
+anchor_top = 0.767
+anchor_right = 0.41200003
+anchor_bottom = 0.81200004
+offset_left = -6.256027
+offset_top = -4.0160217
+offset_right = -190.4895
+offset_bottom = -13.176025
+grow_vertical = 2
+scale = Vector2(2.646, 1.657)
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="LevelText" type="Label" parent="Panel/UI" unique_id=482960562]
-anchors_preset = -1
-anchor_left = 0.10300001
-anchor_top = 0.79200006
-anchor_right = 0.15200001
-anchor_bottom = 0.84900004
-offset_left = 0.34399414
-offset_top = -0.21606445
-offset_right = -0.104003906
-offset_bottom = -0.15203857
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 24
+[node name="LevelText" type="Label" parent="Panel/UI/HBoxContainer" unique_id=1235537233]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
 text = "1"
 horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
-metadata/_edit_group_ = true
+
+[node name="XpBar" type="TextureProgressBar" parent="Panel/UI/HBoxContainer" unique_id=808124309]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 4
+stretch_margin_left = 277
+texture_under = ExtResource("4_vnbil")
+texture_progress = ExtResource("5_ayagu")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="VBoxContainer/Panel/Attack" to="." method="_on_attack_pressed"]
 [connection signal="pressed" from="VBoxContainer/Panel/Guard" to="." method="_on_guard_pressed"]
