@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://j1el13fh36cp"]
+
+[ext_resource type="Script" uid="uid://xhopu7m0p8qy" path="res://Game/HealthBar.gd" id="1_iuunw"]
+[ext_resource type="Texture2D" uid="uid://x2jp4lpw272p" path="res://Assets/Bars/Frame.png" id="2_3f621"]
+[ext_resource type="Texture2D" uid="uid://cmd5l15arptr2" path="res://Assets/Bars/GoldBar.png" id="3_6vn7x"]
+[ext_resource type="Texture2D" uid="uid://dlhkcfd2hxj21" path="res://Assets/Bars/RedBar.png" id="4_q3isp"]
+
+[node name="HP" type="Control" unique_id=1273719987 node_paths=PackedStringArray("back_bar", "front_bar")]
+layout_mode = 3
+anchor_left = 0.021000002
+anchor_top = 0.009000001
+anchor_right = 0.113000005
+anchor_bottom = 0.029000001
+offset_left = -0.19200134
+offset_top = 0.16799974
+offset_right = -0.17601013
+offset_bottom = 0.20800018
+script = ExtResource("1_iuunw")
+back_bar = NodePath("BackBar")
+front_bar = NodePath("FrontBar")
+
+[node name="BackBar" type="TextureProgressBar" parent="." unique_id=298962939]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.97400004
+anchor_bottom = 0.846
+offset_right = -53.244003
+offset_bottom = -8.046001
+texture_under = ExtResource("2_3f621")
+texture_progress = ExtResource("3_6vn7x")
+
+[node name="FrontBar" type="TextureProgressBar" parent="." unique_id=910478677]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.97300005
+anchor_bottom = 1.0
+offset_right = -0.13800812
+value = 50.0
+texture_progress = ExtResource("4_q3isp")
+
+[node name="Label" type="Label" parent="." unique_id=295041322]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.113000005
+anchor_right = -0.028
+anchor_bottom = 0.92300004
+offset_left = -0.02199936
+offset_top = -2.0
+offset_right = 1.9680002
+offset_bottom = 0.0009994507
+theme_override_font_sizes/font_size = 10
+text = "1"
+horizontal_alignment = 2

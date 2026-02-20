@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ttb2lhrdm832" path="res://Assets/TopDownFantasy-Forest/Tiles/Tileset.png" id="2_g5pn2"]
 [ext_resource type="PackedScene" uid="uid://djgfplha35meq" path="res://Game/Player.tscn" id="3_haytw"]
 [ext_resource type="PackedScene" uid="uid://kjfnrdewni3" path="res://Game/Goblin1.tscn" id="4_3xx61"]
-[ext_resource type="PackedScene" uid="uid://c5lsir4sxml5t" path="res://Game/battle.tscn" id="5_q34ae"]
+[ext_resource type="PackedScene" uid="uid://c5lsir4sxml5t" path="res://Game/BattleUI/battle.tscn" id="5_q34ae"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vdl71"]
 texture = ExtResource("2_g5pn2")

@@ -6,7 +6,7 @@ func init(_player):
 	player = _player
 	player.combat_started.connect(on_combat_started)  # safe now
 	hide()
-	$Panel/UI.hide()
+	$Panel/HP.hide()
 
 func show_panel(name):
 	for panel in $PanelContainer.get_children():
@@ -15,7 +15,7 @@ func show_panel(name):
 
 func on_combat_started(enemy):
 	show()
-	$Panel/UI.show()
+	$Panel/HP.show()
 	#$Camera2D.make_current()
 	print("Combat started")
 

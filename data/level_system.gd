@@ -1,7 +1,7 @@
 extends Node
 
-@onready var xp_bar = $UI/XpBar
-@onready var level_text = $UI/LevelText
+@onready var xp_bar = $XpBar
+@onready var level_text = $LevelText
 
 @export var attribute_data: Attributes
 @export var class_data: ClassData

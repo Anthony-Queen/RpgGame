@@ -1,4 +1,6 @@
-extends CanvasLayer
+extends Control
+
+class_name HpBar
 
 @export var back_bar: TextureProgressBar
 @export var front_bar: TextureProgressBar
@@ -11,6 +13,13 @@ var current_pct := 1.0
 var front_tween: Tween
 var back_tween: Tween
 var pulse_tween: Tween = null
+
+func _input(event):
+	if event is InputEventKey:
+		if event.is_pressed() and event.keycode == KEY_SPACE:
+			update_bar(back_bar.value - 10, 100)
+		elif event.is_pressed() and event.keycode == KEY_ENTER:
+			update_bar(back_bar.value + 10, 100)
 
 func update_bar(current: float, max_value: float):
 	var pct = clamp(current / max_value, 0.0, 1.0)
@@ -31,6 +40,7 @@ func update_bar(current: float, max_value: float):
 		
 		back_tween = create_tween()
 		back_tween.tween_property(back_bar, "value", current, 0.45)
+		_on_damage()
 	
 	elif is_heal:
 		if front_tween and front_tween.is_running():
@@ -41,8 +51,11 @@ func update_bar(current: float, max_value: float):
 		front_tween = create_tween().set_parallel()
 		front_tween.tween_property(front_bar, "value", current, 0.25)
 		front_tween.tween_property(back_bar, "value", current, 0.25)
+		_on_damage()
 	
 	current_pct = pct
+	if is_health:
+		_check_low_hp_pulse(pct)
 
 func _shake():
 	var original_pos = position
@@ -54,3 +67,28 @@ func _flash(flash_color: Color):
 	modulate = flash_color
 	var t = create_tween()
 	t.tween_property(self, "modulate", Color(1,1,1), 0.25)
+
+func _on_damage():
+	_flash(Color(1, 0.3, 0.3))
+	if damage_shake:
+		_shake()
+
+func _on_heal():
+	_flash(Color(0.3, 1, 0.3))
+
+func _check_low_hp_pulse(pct: float) -> void:
+	if pct < 0.25:
+		if pulse_tween == null or not pulse_tween.is_running():
+			if pulse_tween:
+				pulse_tween.kill()
+ 
+			pulse_tween = create_tween()
+			pulse_tween.set_loops()
+			pulse_tween.tween_property(self, "scale", Vector2(1.04, 1.04), 0.2)
+			pulse_tween.tween_property(self, "scale", Vector2(1.00, 1.00), 0.2)
+	else:
+		scale = Vector2.ONE
+ 
+		if pulse_tween and pulse_tween.is_running():
+			pulse_tween.kill()
+			pulse_tween = null
