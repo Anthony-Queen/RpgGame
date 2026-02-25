@@ -4,6 +4,7 @@ class_name HpBar
 
 @export var back_bar: TextureProgressBar
 @export var front_bar: TextureProgressBar
+@export var attributes: Attributes
 
 @export var is_health: bool = true
 @export var low_hp_pulse: bool = true
@@ -14,15 +15,29 @@ var front_tween: Tween
 var back_tween: Tween
 var pulse_tween: Tween = null
 
+func _ready():
+	if attributes == null:
+		return
+	
+	if attributes.max_hp <= 0:
+		return
+	
+	update_bar(attributes.current_hp, attributes.max_hp)
+
 func _input(event):
 	if event is InputEventKey:
 		if event.is_pressed() and event.keycode == KEY_SPACE:
-			update_bar(back_bar.value - 10, 100)
+			attributes.current_hp -= 10
+			update_bar(attributes.current_hp, attributes.max_hp)
 		elif event.is_pressed() and event.keycode == KEY_ENTER:
-			update_bar(back_bar.value + 10, 100)
+			attributes.current_hp += 10
+			update_bar(attributes.current_hp, attributes.max_hp)
 
-func update_bar(current: float, max_value: float):
-	var pct = clamp(current / max_value, 0.0, 1.0)
+func update_bar(current: int, max_value: int):
+	var pct := 0.0
+	
+	if max_value > 0:
+		pct = clamp(float(current) / float(max_value), 0.0, 1.0)
 	
 	front_bar.max_value = max_value
 	back_bar.max_value = max_value
@@ -51,9 +66,13 @@ func update_bar(current: float, max_value: float):
 		front_tween = create_tween().set_parallel()
 		front_tween.tween_property(front_bar, "value", current, 0.25)
 		front_tween.tween_property(back_bar, "value", current, 0.25)
-		_on_damage()
+		_on_heal()
+	
+	front_bar.value = current
+	back_bar.value = current
 	
 	current_pct = pct
+	
 	if is_health:
 		_check_low_hp_pulse(pct)
 

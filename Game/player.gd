@@ -1,7 +1,4 @@
 extends CharacterBody2D
-
-var maxMana: int = 30
-var maxHealth: int = 100
  
 enum State { Exploring, Combat }
 var currentState = State.Exploring
