@@ -1,5 +1,4 @@
 extends Control
-
 var player
 
 func init(_player):

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://xhopu7m0p8qy" path="res://Game/HealthBar.gd" id="1_iuunw"]
 [ext_resource type="Texture2D" uid="uid://x2jp4lpw272p" path="res://Assets/Bars/Frame.png" id="2_3f621"]
-[ext_resource type="Script" uid="uid://cx2w1yyikilai" path="res://data/Attributes.gd" id="2_6vn7x"]
+[ext_resource type="Script" uid="uid://cx2w1yyikilai" path="res://Attributes.gd" id="2_6vn7x"]
 [ext_resource type="Texture2D" uid="uid://cmd5l15arptr2" path="res://Assets/Bars/GoldBar.png" id="3_6vn7x"]
 [ext_resource type="Texture2D" uid="uid://dlhkcfd2hxj21" path="res://Assets/Bars/RedBar.png" id="4_q3isp"]
 

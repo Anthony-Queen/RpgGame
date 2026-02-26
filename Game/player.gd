@@ -8,7 +8,7 @@ var isEnemyDead = false
 var attacks: Array[Attack] = []
 const MAX_ATTACKS := 4
 signal combat_started(enemy)
-
+var body
 
 func _physics_process(_delta):
 	var direction = Input.get_vector("left", "right", "up", "down")

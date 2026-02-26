@@ -1,4 +1,5 @@
 extends CharacterBody2D
+@export var data: Enemy
 
 func _ready():
 	add_to_group("enemy")

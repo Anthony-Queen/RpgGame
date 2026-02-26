@@ -2,6 +2,52 @@
 
 [ext_resource type="Script" uid="uid://cjj8j0tb0whko" path="res://Game/goblin_1.gd" id="1_g76rv"]
 [ext_resource type="Texture2D" uid="uid://cg4ykckeitm4w" path="res://Assets/Monsters/sprGoblin1.png" id="1_pec68"]
+[ext_resource type="Script" uid="uid://hhmajge4yiub" path="res://data/Enemy.gd" id="2_eb5mm"]
+[ext_resource type="Texture2D" uid="uid://b4cgb0vsxbt88" path="res://Assets/Monsters/FlippedGoblin1.png" id="2_qtvgc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hs1ga"]
+atlas = ExtResource("2_qtvgc")
+region = Rect2(0, 0, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkcuu"]
+atlas = ExtResource("2_qtvgc")
+region = Rect2(25, 0, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpota"]
+atlas = ExtResource("2_qtvgc")
+region = Rect2(50, 0, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36ejf"]
+atlas = ExtResource("2_qtvgc")
+region = Rect2(75, 0, 25, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0a23w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hs1ga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nkcuu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpota")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36ejf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_qtvgc"]
+script = ExtResource("2_eb5mm")
+Sprite = SubResource("SpriteFrames_0a23w")
+Health = 30
+Name = "Goblin"
+Damage = 5
+metadata/_custom_type_script = "uid://hhmajge4yiub"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vmgcn"]
 atlas = ExtResource("1_pec68")
@@ -31,6 +77,7 @@ height = 12.0
 
 [node name="Goblin1" type="CharacterBody2D" unique_id=2031590329]
 script = ExtResource("1_g76rv")
+data = SubResource("Resource_qtvgc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=733545738]
 sprite_frames = SubResource("SpriteFrames_a8m7i")
