@@ -6,9 +6,9 @@ func _ready():
 
 func show_battle(enemy):
 	if player.currentState == player.State.Combat:
-		var battle_scene = preload("res://Game/BattleUI/battle.tscn").instantiate()
-		battle_scene.enemy = enemy
-		get_tree().root.add_child(battle_scene)
+		GameState.current_enemy = enemy
+		get_tree().change_scene_to_file("res://Game/BattleUI/battle.tscn")
+		
 		
 		print(enemy)
 		

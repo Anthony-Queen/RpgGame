@@ -3,9 +3,9 @@ var player
 var enemy
 
 func _ready():
-	if enemy:
-		$AnimatedSprite2D.sprite_frames = enemy.sprite_frames
-		$AnimatedSprite2D.play("Default")
+	var enemy = GameState.current_enemy
+	$AnimatedSprite2D.sprite_frames = enemy.Sprite
+	$AnimatedSprite2D.play("default")
 
 func init(_player):
 	player = _player
