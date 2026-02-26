@@ -1,5 +1,5 @@
 extends CharacterBody2D
- 
+
 enum State { Exploring, Combat }
 var currentState = State.Exploring
 var max_speed = 200
@@ -24,6 +24,26 @@ func _physics_process(_delta):
 	else:
 		play_idle_animation(last_direction)
 
+func onEnemy():
+	for i in range(get_slide_collision_count()):
+		var collision = get_slide_collision(i)
+		var body = collision.get_collider()
+		
+		if body.is_in_group("enemy") and currentState != State.Combat:
+			enter_combat(body)
+
+func enter_combat(enemy):
+	currentState = State.Combat
+	emit_signal("combat_started", enemy) #Need to connect signal 2 shit
+
+func exit_combat():
+	if isEnemyDead:
+		currentState = State.Exploring
+
+func add_attack(a: Attack):
+	if attacks.size() < MAX_ATTACKS:
+		attacks.append(a)
+
 func play_walk_animation(direction):
 	if direction.x > 0:
 		$AnimatedSprite2D.play("Right")
@@ -43,23 +63,3 @@ func play_idle_animation(direction):
 		$AnimatedSprite2D.play("Idle_Down")
 	elif direction.y < 0:
 		$AnimatedSprite2D.play("Idle_Up")
-
-func enter_combat(enemy):
-	currentState = State.Combat
-	emit_signal("combat_started", enemy) #Need to connect signal 2 Combat UI
-
-func onEnemy():
-	for i in range(get_slide_collision_count()):
-		var collision = get_slide_collision(i)
-		var body = collision.get_collider()
-		
-		if body.is_in_group("enemy") and currentState != State.Combat:
-			enter_combat(body)
-
-func exit_combat():
-	if isEnemyDead:
-		currentState = State.Exploring
-
-func add_attack(a: Attack):
-	if attacks.size() < MAX_ATTACKS:
-		attacks.append(a)

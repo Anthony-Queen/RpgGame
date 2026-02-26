@@ -1,7 +1,10 @@
 extends Node2D
-
 @onready var player = $Player
-@onready var battle = $CanvasLayer/Battle  # adjust path to your CanvasLayer
-
 func _ready():
-	battle.init(player)  # passes the Player to Battle safely
+	player.combat_started.connect(show_battle)
+
+func show_battle(enemy):
+	if player.currentState == player.State.Combat:
+		get_tree().change_scene_to_file("res://Game/BattleUI/battle.tscn")
+	elif player.currentState == player.State.Exploring:
+		get_tree().change_scene_to_file("res://Game/Main.tscn")

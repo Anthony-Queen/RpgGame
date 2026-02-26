@@ -1,22 +1,17 @@
 extends Control
 
-var player  # will be assigned from Main
+var player
 
 func init(_player):
 	player = _player
-	player.combat_started.connect(on_combat_started)  # safe now
-	hide()
-	$Panel/HP.hide()
+	player.combat_started.connect(on_combat_started)
 
 func show_panel(name):
 	for panel in $PanelContainer.get_children():
 		panel.visible = false
 	$PanelContainer.get_node(name).visible = true
 
-func on_combat_started(enemy):
-	show()
-	$Panel/HP.show()
-	#$Camera2D.make_current()
+func on_combat_started(enemy): # Evoked when touching enemy
 	print("Combat started")
 
 func _on_attack_pressed() -> void:
