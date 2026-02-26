@@ -1,5 +1,11 @@
 extends Control
 var player
+var enemy
+
+func _ready():
+	if enemy:
+		$AnimatedSprite2D.sprite_frames = enemy.sprite_frames
+		$AnimatedSprite2D.play("Default")
 
 func init(_player):
 	player = _player
@@ -10,7 +16,7 @@ func show_panel(name):
 		panel.visible = false
 	$PanelContainer.get_node(name).visible = true
 
-func on_combat_started(enemy): # Evoked when touching enemy
+func on_combat_started(enemy):
 	print("Combat started")
 
 func _on_attack_pressed() -> void:

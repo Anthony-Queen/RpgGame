@@ -8,7 +8,6 @@ var isEnemyDead = false
 var attacks: Array[Attack] = []
 const MAX_ATTACKS := 4
 signal combat_started(enemy)
-var body
 
 func _physics_process(_delta):
 	var direction = Input.get_vector("left", "right", "up", "down")
@@ -32,9 +31,9 @@ func onEnemy():
 		if body.is_in_group("enemy") and currentState != State.Combat:
 			enter_combat(body)
 
-func enter_combat(enemy):
+func enter_combat(body):
 	currentState = State.Combat
-	emit_signal("combat_started", enemy) #Need to connect signal 2 shit
+	emit_signal("combat_started", body.data) #Need to connect signal 2 shit
 
 func exit_combat():
 	if isEnemyDead:
