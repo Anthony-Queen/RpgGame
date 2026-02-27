@@ -18,10 +18,9 @@ var pulse_tween: Tween = null
 func _ready():
 	if attributes == null:
 		return
-	
 	if attributes.max_hp <= 0:
 		return
-	
+
 	update_bar(attributes.current_hp, attributes.max_hp)
 
 func _input(event):
@@ -67,9 +66,6 @@ func update_bar(current: int, max_value: int):
 		front_tween.tween_property(front_bar, "value", current, 0.25)
 		front_tween.tween_property(back_bar, "value", current, 0.25)
 		_on_heal()
-	
-	front_bar.value = current
-	back_bar.value = current
 	
 	current_pct = pct
 	

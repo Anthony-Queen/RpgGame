@@ -6,8 +6,9 @@ func _ready():
 
 func show_battle(enemy):
 	if player.currentState == player.State.Combat:
-		GameState.current_enemy = enemy
+		Globals.current_enemy = enemy
 		get_tree().change_scene_to_file("res://Game/BattleUI/battle.tscn")
+		
 		
 		
 		print(enemy)
