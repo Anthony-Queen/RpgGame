@@ -1,24 +1,21 @@
 extends Control
-var player
 var enemy = Globals.current_enemy
 
 func _ready():
 	$AnimatedSprite2D.sprite_frames = enemy.Sprite
 	$AnimatedSprite2D.play("default")
 
-func attack():
-	player.attributes.current_hp -= enemy.Damage
-	$Panel/HP.update_bar(
-		player.attributes.current_hp,
-		player.attributes.max_hp
-	)
-
-func init(_player):
-	player = _player
-	player.combat_started.connect(on_combat_started)
-	print(player.attributes.current_hp)
+	enemy = Globals.current_enemy
+	print(Globals.current_hp)
 	attack()
-	print(player.attributes.current_hp)
+	print(Globals.current_hp)
+
+func attack():
+	Globals.current_hp -= enemy.Damage
+	$Panel/HP.update_bar(
+		Globals.current_hp,
+		Globals.max_hp
+	)
 
 func show_panel(name):
 	for panel in $PanelContainer.get_children():

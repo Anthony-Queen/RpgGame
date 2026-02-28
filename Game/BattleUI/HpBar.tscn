@@ -8,8 +8,6 @@
 
 [sub_resource type="Resource" id="Resource_q3isp"]
 script = ExtResource("2_6vn7x")
-current_hp = 40
-current_mana = 50
 metadata/_custom_type_script = "uid://cx2w1yyikilai"
 
 [node name="HP" type="Control" unique_id=1273719987 node_paths=PackedStringArray("back_bar", "front_bar")]

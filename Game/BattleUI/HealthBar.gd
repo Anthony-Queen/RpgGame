@@ -21,7 +21,7 @@ func _ready():
 	if attributes.max_hp <= 0:
 		return
 
-	update_bar(attributes.current_hp, attributes.max_hp)
+	update_bar(Globals.current_hp, attributes.max_hp)
 
 func _input(event):
 	if event is InputEventKey:

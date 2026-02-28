@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-enum State { Exploring, Combat }
-var currentState = State.Exploring
 var max_speed = 200
 var last_direction := Vector2(1,0)
 var isEnemyDead = false
@@ -9,12 +7,15 @@ var attacks: Array[Attack] = []
 const MAX_ATTACKS := 4
 signal combat_started(enemy)
 
+func _ready():
+	Globals.player = self
+
 func _physics_process(_delta):
 	var direction = Input.get_vector("left", "right", "up", "down")
 	velocity = direction * max_speed
 	move_and_slide()
 	onEnemy()
-	if currentState == State.Combat and isEnemyDead:
+	if Globals.currentPlayerState == Globals.PlayerState.Combat and isEnemyDead:
 		exit_combat()
 	
 	if direction.length() > 0:
@@ -28,16 +29,16 @@ func onEnemy():
 		var collision = get_slide_collision(i)
 		var body = collision.get_collider()
 		
-		if body.is_in_group("enemy") and currentState != State.Combat:
+		if body.is_in_group("enemy") and Globals.currentPlayerState != Globals.PlayerState.Combat:
 			enter_combat(body)
 
 func enter_combat(body):
-	currentState = State.Combat
+	Globals.currentPlayerState = Globals.PlayerState.Combat
 	emit_signal("combat_started", body.data) #Need to connect signal 2 shit
 
 func exit_combat():
 	if isEnemyDead:
-		currentState = State.Exploring
+		Globals.currentPlayerState = Globals.PlayerState.Exploring
 
 func add_attack(a: Attack):
 	if attacks.size() < MAX_ATTACKS:
