@@ -7,9 +7,9 @@ var player: Node = null
 # Player Stats
 var current_hp: float
 var current_mana: float
-var max_hp: int = 40
-var max_mana: int = 20
-var strength: int = 1
+var max_hp: float = 40
+var max_mana: float = 20
+var strength: float = 1
 
 #func _init():
 #	current_hp = max_hp

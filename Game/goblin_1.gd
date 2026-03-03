@@ -14,10 +14,13 @@ func decide():
 		var random = randf()
 		if random < 0.55:
 			emit_signal("enemy_attack")
+			print("attack")
 		elif random < 0.35:
 			emit_signal("enemy_defend")
+			print("attack")
 		else: 
 			emit_signal("enemy_heal")
+			print("attack")
 
 
 func _physics_process(_delta):

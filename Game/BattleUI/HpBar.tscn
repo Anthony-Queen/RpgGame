@@ -30,8 +30,8 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.97400004
 anchor_bottom = 0.846
-offset_right = -53.244003
-offset_bottom = -8.046001
+offset_right = -2.2440033
+offset_bottom = 0.001999855
 texture_under = ExtResource("2_3f621")
 texture_progress = ExtResource("3_6vn7x")
 

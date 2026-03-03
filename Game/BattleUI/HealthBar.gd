@@ -23,6 +23,7 @@ func _ready():
 
 	update_bar(Globals.current_hp, attributes.max_hp)
 
+"""
 func _input(event):
 	if event is InputEventKey:
 		if event.is_pressed() and event.keycode == KEY_SPACE:
@@ -31,7 +32,7 @@ func _input(event):
 		elif event.is_pressed() and event.keycode == KEY_ENTER:
 			attributes.current_hp += 10
 			update_bar(attributes.current_hp, attributes.max_hp)
-
+"""
 func update_bar(current: int, max_value: int):
 	var pct := 0.0
 	
