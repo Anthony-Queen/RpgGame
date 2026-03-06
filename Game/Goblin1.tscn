@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://kjfnrdewni3"]
 
-[ext_resource type="Script" uid="uid://cjj8j0tb0whko" path="res://Game/goblin_1.gd" id="1_g76rv"]
+[ext_resource type="Script" uid="uid://cjj8j0tb0whko" path="res://Game/enemy.gd" id="1_g76rv"]
 [ext_resource type="Texture2D" uid="uid://cg4ykckeitm4w" path="res://Assets/Monsters/sprGoblin1.png" id="1_pec68"]
 [ext_resource type="Script" uid="uid://hhmajge4yiub" path="res://data/Enemy.gd" id="2_eb5mm"]
 [ext_resource type="Texture2D" uid="uid://b4cgb0vsxbt88" path="res://Assets/Monsters/FlippedGoblin1.png" id="2_qtvgc"]

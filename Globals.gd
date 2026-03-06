@@ -1,5 +1,6 @@
 extends Node
-var current_enemy
+var current_enemy = null
+var current_enemy_node = null
 #Player Variables
 enum PlayerState { Exploring, Combat }
 var currentPlayerState = PlayerState.Exploring
@@ -15,13 +16,9 @@ var strength: float = 1
 #	current_hp = max_hp
 #	current_mana = max_mana
 
-func save_data():
-	Globals.player = player
-
 func show_battle(enemy):
 	if currentPlayerState == PlayerState.Combat:
-		Globals.current_enemy = enemy
-		save_data()
+		enemy = current_enemy
 		get_tree().change_scene_to_file("res://Game/BattleUI/battle.tscn")
 		
 		

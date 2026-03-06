@@ -20,7 +20,6 @@ func _ready():
 		return
 	if attributes.max_hp <= 0:
 		return
-
 	update_bar(Globals.current_hp, attributes.max_hp)
 
 """

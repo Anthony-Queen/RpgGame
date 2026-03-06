@@ -1,5 +1,5 @@
 extends Resource
-class_name Enemy #Mrow :3
+class_name Enemy
 
 @export var Sprite: SpriteFrames
 @export var Health: int

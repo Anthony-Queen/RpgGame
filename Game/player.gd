@@ -32,9 +32,14 @@ func onEnemy():
 		if body.is_in_group("enemy") and Globals.currentPlayerState != Globals.PlayerState.Combat:
 			enter_combat(body)
 
-func enter_combat(body):
+func enter_combat(enemy):
 	Globals.currentPlayerState = Globals.PlayerState.Combat
-	emit_signal("combat_started", body.data) #Need to connect signal 2 shit
+	
+	Globals.current_enemy = enemy.data
+	Globals.current_enemy_node = enemy
+	
+	enemy.get_parent().remove_child(enemy)
+	Globals.show_battle(enemy)
 
 func exit_combat():
 	if isEnemyDead:

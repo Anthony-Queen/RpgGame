@@ -8,19 +8,20 @@ signal enemy_heal
 
 func _ready():
 	add_to_group("enemy")
+	En_Health = data.Health
 
 func decide():
-	while En_Health > 0:
-		var random = randf()
-		if random < 0.55:
-			emit_signal("enemy_attack")
-			print("attack")
-		elif random < 0.35:
-			emit_signal("enemy_defend")
-			print("attack")
-		else: 
-			emit_signal("enemy_heal")
-			print("attack")
+	if En_Health <= 0:
+		return
+	
+	var random = randf()
+	
+	if random < 0.55:
+		enemy_attack.emit()
+	elif random < 0.85:
+		enemy_defend.emit()
+	else:
+		enemy_heal.emit()
 
 
 func _physics_process(_delta):
