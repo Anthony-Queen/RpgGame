@@ -1,6 +1,5 @@
 extends CharacterBody2D
 @export var data: Enemy
-var En_Health
 signal enemy_attack
 signal enemy_defend
 signal enemy_heal
@@ -8,10 +7,9 @@ signal enemy_heal
 
 func _ready():
 	add_to_group("enemy")
-	En_Health = data.Health
 
 func decide():
-	if En_Health <= 0:
+	if data.Health <= 0:
 		return
 	
 	var random = randf()

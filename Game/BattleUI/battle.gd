@@ -7,9 +7,13 @@ func _ready():
 	updateHp()
 	$AnimatedSprite2D.sprite_frames = enemy.Sprite
 	$AnimatedSprite2D.play("default")
+	
+	#WILL modify later, to add turns
 	enemy_node.enemy_attack.connect(_on_enemy_attack)
 	enemy_node.enemy_defend.connect(_on_enemy_defend)
 	enemy_node.enemy_heal.connect(_on_enemy_heal)
+	enemy_node.decide()
+
 
 func _on_enemy_attack():
 	print("enemy atatcked")
@@ -17,9 +21,12 @@ func _on_enemy_attack():
 
 func _on_enemy_defend():
 	print("Enemy defended")
+	#Gotta figure out how to reduce player dmg by %
 
 func _on_enemy_heal():
 	print("Enemy healed")
+	enemy.Health += 10
+	print(enemy.Health)
 
 func updateHp():
 	Globals.current_hp -= 0.01 # Fixes a bug that makes HpBar go to 0 (Idek why this happens tbh, but doing this fixes it.)

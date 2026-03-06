@@ -45,10 +45,6 @@ func exit_combat():
 	if isEnemyDead:
 		Globals.currentPlayerState = Globals.PlayerState.Exploring
 
-func add_attack(a: Attack):
-	if attacks.size() < MAX_ATTACKS:
-		attacks.append(a)
-
 func play_walk_animation(direction):
 	if direction.x > 0:
 		$AnimatedSprite2D.play("Right")

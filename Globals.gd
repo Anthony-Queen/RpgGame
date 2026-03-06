@@ -10,7 +10,7 @@ var current_hp: float
 var current_mana: float
 var max_hp: float = 40
 var max_mana: float = 20
-var strength: float = 1
+var damage: float = 10
 
 #func _init():
 #	current_hp = max_hp
@@ -22,8 +22,6 @@ func show_battle(enemy):
 		get_tree().change_scene_to_file("res://Game/BattleUI/battle.tscn")
 		
 		
-		
-		print(enemy)
 		
 	elif currentPlayerState == PlayerState.Exploring:
 		get_tree().change_scene_to_file("res://Game/Main.tscn")
