@@ -1,19 +1,37 @@
 extends Control
+
 @onready var enemy = Globals.current_enemy
 @onready var enemy_node = Globals.current_enemy_node
+var CurrentTurn
+# TEST
+var current: Array = [enemy_node, Player]
+var x = randi() % 2
+
+signal PlayerTurn
+signal EnemyTurn
 
 func _ready():
 	add_child(Globals.current_enemy_node)
-	updateHp()
-	$AnimatedSprite2D.sprite_frames = enemy.Sprite
-	$AnimatedSprite2D.play("default")
+	#updateHp()
+	$Enemy.sprite_frames = enemy.Sprite
+	$Enemy.play("default")
+	$TurnLogic/Player/Camera2D.enabled = false
 	
 	#WILL modify later, to add turns
 	enemy_node.enemy_attack.connect(_on_enemy_attack)
 	enemy_node.enemy_defend.connect(_on_enemy_defend)
 	enemy_node.enemy_heal.connect(_on_enemy_heal)
-	enemy_node.decide()
+	#ChangeTurn(current[x])
 
+func ChangeTurn(current):
+	CurrentTurn = current
+	if current == Player:
+		PlayerTurn.emit()
+		print("Player is playing")
+	else:
+		EnemyTurn.emit()
+		enemy_node.decide()
+		print("Enemy is playing")
 
 func _on_enemy_attack():
 	print("enemy atatcked")

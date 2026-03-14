@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Globals="*uid://dc4rjkokicg2q"
+Battle="*uid://ctj8obagincqp"
 
 [display]
 

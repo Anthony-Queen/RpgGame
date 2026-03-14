@@ -7,6 +7,7 @@ signal enemy_heal
 
 func _ready():
 	add_to_group("enemy")
+	Battle.EnemyTurn.connect(decide)
 
 func decide():
 	if data.Health <= 0:

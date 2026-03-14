@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name Player
+
 var max_speed = 200
 var last_direction := Vector2(1,0)
 var isEnemyDead = false
@@ -7,22 +9,24 @@ var attacks: Array[Attack] = []
 const MAX_ATTACKS := 4
 signal combat_started(enemy)
 
+
 func _ready():
 	Globals.player = self
 
 func _physics_process(_delta):
-	var direction = Input.get_vector("left", "right", "up", "down")
-	velocity = direction * max_speed
-	move_and_slide()
-	onEnemy()
-	if Globals.currentPlayerState == Globals.PlayerState.Combat and isEnemyDead:
-		exit_combat()
+	if Globals.currentPlayerState == 0:
+		var direction = Input.get_vector("left", "right", "up", "down")
+		velocity = direction * max_speed
+		move_and_slide()
+		onEnemy()
+		if Globals.currentPlayerState == Globals.PlayerState.Combat and isEnemyDead:
+			exit_combat()
 	
-	if direction.length() > 0:
-		last_direction = direction
-		play_walk_animation(direction)
-	else:
-		play_idle_animation(last_direction)
+		if direction.length() > 0:
+			last_direction = direction
+			play_walk_animation(direction)
+		else:
+			play_idle_animation(last_direction)
 
 func onEnemy():
 	for i in range(get_slide_collision_count()):
@@ -33,8 +37,9 @@ func onEnemy():
 			enter_combat(body)
 
 func enter_combat(enemy):
+	velocity = Vector2.ZERO
 	Globals.currentPlayerState = Globals.PlayerState.Combat
-	
+
 	Globals.current_enemy = enemy.data
 	Globals.current_enemy_node = enemy
 	
@@ -44,6 +49,7 @@ func enter_combat(enemy):
 func exit_combat():
 	if isEnemyDead:
 		Globals.currentPlayerState = Globals.PlayerState.Exploring
+		$Camera2D.enabled = true
 
 func play_walk_animation(direction):
 	if direction.x > 0:

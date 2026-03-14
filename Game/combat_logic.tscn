@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://quu0g5smxlh6"]
-
-[ext_resource type="Script" uid="uid://d3kivf04ly642" path="res://CombatLogic.gd" id="1_2bkex"]
-
-[node name="CombatLogic" type="Node" unique_id=610641362]
-script = ExtResource("1_2bkex")

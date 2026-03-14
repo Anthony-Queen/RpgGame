@@ -1,6 +1,6 @@
 extends Node
-var current_enemy = null
-var current_enemy_node = null
+var current_enemy
+var current_enemy_node
 #Player Variables
 enum PlayerState { Exploring, Combat }
 var currentPlayerState = PlayerState.Exploring
@@ -11,6 +11,7 @@ var current_mana: float
 var max_hp: float = 40
 var max_mana: float = 20
 var damage: float = 10
+var speed: float = 1
 
 #func _init():
 #	current_hp = max_hp
