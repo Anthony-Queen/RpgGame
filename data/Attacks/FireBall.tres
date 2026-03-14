@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_m4rxt")
 name = "FireBall"
-damage = 20
-mana = 10
+damage = 20.0
+mana = 10.0
 metadata/_custom_type_script = "uid://1xkn688bayty"

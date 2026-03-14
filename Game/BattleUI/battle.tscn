@@ -141,7 +141,7 @@ grow_vertical = 2
 columns = 2
 script = ExtResource("3_d08l8")
 
-[node name="Button" type="Button" parent="PanelContainer/AttackPanel/GridContainer" unique_id=964089352]
+[node name="Attack1" type="Button" parent="PanelContainer/AttackPanel/GridContainer" unique_id=964089352]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -151,7 +151,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_ayagu")
 text = "Attack"
 icon = SubResource("CanvasTexture_ohkfk")
 
-[node name="Button2" type="Button" parent="PanelContainer/AttackPanel/GridContainer" unique_id=1818115419]
+[node name="Attack2" type="Button" parent="PanelContainer/AttackPanel/GridContainer" unique_id=1818115419]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -161,7 +161,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_ayagu")
 text = "Attack"
 icon = SubResource("CanvasTexture_ohkfk")
 
-[node name="Button3" type="Button" parent="PanelContainer/AttackPanel/GridContainer" unique_id=503429961]
+[node name="Attack3" type="Button" parent="PanelContainer/AttackPanel/GridContainer" unique_id=503429961]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -171,7 +171,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_ayagu")
 text = "Attack"
 icon = SubResource("CanvasTexture_ohkfk")
 
-[node name="Button4" type="Button" parent="PanelContainer/AttackPanel/GridContainer" unique_id=937978902]
+[node name="Attack4" type="Button" parent="PanelContainer/AttackPanel/GridContainer" unique_id=937978902]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -331,6 +331,7 @@ position = Vector2(10, 631)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1576050375]
 position = Vector2(577, 325)
 
+[connection signal="pressed" from="PanelContainer/AttackPanel/GridContainer/Attack1" to="PanelContainer/AttackPanel/GridContainer" method="_on_attack_1_pressed"]
 [connection signal="pressed" from="VBoxContainer/Panel/Attack" to="." method="_on_attack_pressed"]
 [connection signal="pressed" from="VBoxContainer/Panel/Guard" to="." method="_on_guard_pressed"]
 [connection signal="pressed" from="VBoxContainer/Panel/Item" to="." method="_on_item_pressed"]

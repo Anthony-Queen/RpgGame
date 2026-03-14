@@ -21,7 +21,7 @@ var speed: float = 1
 func show_battle(enemy):
 	if currentPlayerState == PlayerState.Combat:
 		current_enemy_node = enemy
-		Battle.ChangeTurn(Battle.current[0])
+		current_enemy = enemy.data
 		get_tree().change_scene_to_file("res://Game/BattleUI/battle.tscn")
 		
 		

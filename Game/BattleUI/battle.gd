@@ -5,14 +5,20 @@ extends Control
 
 var CurrentTurn
 # TEST
-var current: Array = [enemy_node, Player]
+var current: Array = [Globals.current_enemy_node, Player]
 var x = randi() % 2
 # TESTEND
 signal PlayerTurn
 signal EnemyTurn
 
 func _ready():
-	pass
+	if Globals.current_enemy_node:
+		print("Got signals!")
+		Globals.current_enemy_node.enemy_attack.connect(_on_enemy_attack)
+		Globals.current_enemy_node.enemy_defend.connect(_on_enemy_defend)
+		Globals.current_enemy_node.enemy_heal.connect(_on_enemy_heal)
+		
+		call_deferred("ChangeTurn", current[0])
 
 func _process(delta):
 	if Globals.current_enemy_node != null and has_node("Panel/HP") and has_node("Enemy/EnemySprite"):
@@ -20,12 +26,6 @@ func _process(delta):
 # Setup enemy sprite
 		$Enemy/EnemySprite.sprite_frames = Globals.current_enemy.Sprite
 		$Enemy/EnemySprite.play("default")
-		
-		# Connect signals
-		Globals.current_enemy_node.enemy_attack.connect(_on_enemy_attack)
-		Globals.current_enemy_node.enemy_defend.connect(_on_enemy_defend)
-		Globals.current_enemy_node.enemy_heal.connect(_on_enemy_heal)
-		
 		$Player/Camera2D.enabled = false
 		
 		# Stop running
@@ -39,6 +39,7 @@ func ChangeTurn(current):
 	else:
 		EnemyTurn.emit()
 		print("Enemy is playing")
+		current.decide()
 
 func _on_enemy_attack():
 	print("enemy atatcked")
@@ -64,15 +65,15 @@ func updateHp():
 			Globals.max_hp
 		)
 
+func on_combat_started(enemy):
+	print("Combat started")
+
+# Next 5 Functions are for Showinf relevant Panels
 func show_panel(name):
 	for panel in $PanelContainer.get_children():
 		panel.visible = false
 	$PanelContainer.get_node(name).visible = true
 	
-
-func on_combat_started(enemy):
-	print("Combat started")
-
 func _on_attack_pressed() -> void:
 	show_panel("AttackPanel")
 
