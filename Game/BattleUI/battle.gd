@@ -2,7 +2,6 @@ extends Control
 
 @onready var enemy = Globals.current_enemy
 @onready var enemy_node = Globals.current_enemy_node
-@onready var hp_bar = $Panel/HP
 
 var CurrentTurn
 # TEST
@@ -13,20 +12,24 @@ signal PlayerTurn
 signal EnemyTurn
 
 func _ready():
-	var timer := Timer.new()
-	add_child(timer)
-	#add_child(Globals.current_enemy_node)
-	#Globals.current_enemy_node.connect("ready", self, "_setup_enemy")
-	updateHp()
-	$Enemy/EnemySprite.sprite_frames = enemy.data.Sprite
-	$Enemy/EnemySprite.play("default")
-	$Player/Camera2D.enabled = false
-	
-	#WILL modify later, to add turns
-	enemy_node.enemy_attack.connect(_on_enemy_attack)
-	enemy_node.enemy_defend.connect(_on_enemy_defend)
-	enemy_node.enemy_heal.connect(_on_enemy_heal)
-	#ChangeTurn(current[x])
+	pass
+
+func _process(delta):
+	if Globals.current_enemy_node != null and has_node("Panel/HP") and has_node("Enemy/EnemySprite"):
+		updateHp()
+# Setup enemy sprite
+		$Enemy/EnemySprite.sprite_frames = Globals.current_enemy.Sprite
+		$Enemy/EnemySprite.play("default")
+		
+		# Connect signals
+		Globals.current_enemy_node.enemy_attack.connect(_on_enemy_attack)
+		Globals.current_enemy_node.enemy_defend.connect(_on_enemy_defend)
+		Globals.current_enemy_node.enemy_heal.connect(_on_enemy_heal)
+		
+		$Player/Camera2D.enabled = false
+		
+		# Stop running
+		set_process(false)
 
 func ChangeTurn(current):
 	CurrentTurn = current
@@ -35,37 +38,37 @@ func ChangeTurn(current):
 		print("Player is playing")
 	else:
 		EnemyTurn.emit()
-		enemy_node.decide()
 		print("Enemy is playing")
 
 func _on_enemy_attack():
 	print("enemy atatcked")
-	attack()
+	Globals.current_hp -= enemy.Damage
+	updateHp()
+	ChangeTurn(Player)
 
 func _on_enemy_defend():
 	print("Enemy defended")
 	#Gotta figure out how to reduce player dmg by %
+	ChangeTurn(Player)
 
 func _on_enemy_heal():
 	print("Enemy healed")
 	enemy.Health += 10
 	print(enemy.Health)
+	ChangeTurn(Player)
 
 func updateHp():
 	Globals.current_hp -= 0.01 # Fixes a bug that makes HpBar go to 0 (Idek why this happens tbh, but doing this fixes it.)
-	hp_bar.update_bar(
+	$Panel/HP.update_bar(
 			Globals.current_hp,
 			Globals.max_hp
 		)
-
-func attack():
-	Globals.current_hp -= enemy.Damage
-	#updateHp()
 
 func show_panel(name):
 	for panel in $PanelContainer.get_children():
 		panel.visible = false
 	$PanelContainer.get_node(name).visible = true
+	
 
 func on_combat_started(enemy):
 	print("Combat started")

@@ -15,7 +15,7 @@ func decide():
 		return
 	
 	var random = randf()
-	
+	print(random)
 	if random < 0.55:
 		enemy_attack.emit()
 	elif random < 0.85:

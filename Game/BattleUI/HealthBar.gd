@@ -22,16 +22,6 @@ func _ready():
 		return
 	update_bar(Globals.current_hp, attributes.max_hp)
 
-"""
-func _input(event):
-	if event is InputEventKey:
-		if event.is_pressed() and event.keycode == KEY_SPACE:
-			attributes.current_hp -= 10
-			update_bar(attributes.current_hp, attributes.max_hp)
-		elif event.is_pressed() and event.keycode == KEY_ENTER:
-			attributes.current_hp += 10
-			update_bar(attributes.current_hp, attributes.max_hp)
-"""
 func update_bar(current: float, max_value: float):
 	var pct := 0.0
 	

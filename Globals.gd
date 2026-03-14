@@ -1,6 +1,7 @@
 extends Node
-var current_enemy
-var current_enemy_node
+
+var current_enemy #THIS is the Enemy Resource with the stats 
+var current_enemy_node #And THIS is the Enemy node, with the script and allat
 #Player Variables
 enum PlayerState { Exploring, Combat }
 var currentPlayerState = PlayerState.Exploring
@@ -19,7 +20,8 @@ var speed: float = 1
 
 func show_battle(enemy):
 	if currentPlayerState == PlayerState.Combat:
-		current_enemy = enemy
+		current_enemy_node = enemy
+		Battle.ChangeTurn(Battle.current[0])
 		get_tree().change_scene_to_file("res://Game/BattleUI/battle.tscn")
 		
 		
