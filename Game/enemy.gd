@@ -1,5 +1,6 @@
 extends CharacterBody2D
 @export var data: Enemy
+
 signal enemy_attack
 signal enemy_defend
 signal enemy_heal

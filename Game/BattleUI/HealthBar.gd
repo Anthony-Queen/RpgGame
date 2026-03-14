@@ -32,7 +32,7 @@ func _input(event):
 			attributes.current_hp += 10
 			update_bar(attributes.current_hp, attributes.max_hp)
 """
-func update_bar(current: int, max_value: int):
+func update_bar(current: float, max_value: float):
 	var pct := 0.0
 	
 	if max_value > 0:

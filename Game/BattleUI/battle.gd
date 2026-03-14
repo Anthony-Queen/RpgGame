@@ -2,20 +2,25 @@ extends Control
 
 @onready var enemy = Globals.current_enemy
 @onready var enemy_node = Globals.current_enemy_node
+@onready var hp_bar = $Panel/HP
+
 var CurrentTurn
 # TEST
 var current: Array = [enemy_node, Player]
 var x = randi() % 2
-
+# TESTEND
 signal PlayerTurn
 signal EnemyTurn
 
 func _ready():
-	add_child(Globals.current_enemy_node)
-	#updateHp()
-	$Enemy.sprite_frames = enemy.Sprite
-	$Enemy.play("default")
-	$TurnLogic/Player/Camera2D.enabled = false
+	var timer := Timer.new()
+	add_child(timer)
+	#add_child(Globals.current_enemy_node)
+	#Globals.current_enemy_node.connect("ready", self, "_setup_enemy")
+	updateHp()
+	$Enemy/EnemySprite.sprite_frames = enemy.data.Sprite
+	$Enemy/EnemySprite.play("default")
+	$Player/Camera2D.enabled = false
 	
 	#WILL modify later, to add turns
 	enemy_node.enemy_attack.connect(_on_enemy_attack)
@@ -48,14 +53,14 @@ func _on_enemy_heal():
 
 func updateHp():
 	Globals.current_hp -= 0.01 # Fixes a bug that makes HpBar go to 0 (Idek why this happens tbh, but doing this fixes it.)
-	$Panel/HP.update_bar(
+	hp_bar.update_bar(
 			Globals.current_hp,
 			Globals.max_hp
 		)
 
 func attack():
 	Globals.current_hp -= enemy.Damage
-	updateHp()
+	#updateHp()
 
 func show_panel(name):
 	for panel in $PanelContainer.get_children():
