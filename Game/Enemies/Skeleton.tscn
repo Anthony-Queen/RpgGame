@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://dvfpx4ncumj5x"]
+
+[ext_resource type="Script" uid="uid://cjj8j0tb0whko" path="res://Game/enemy.gd" id="1_frkm6"]
+[ext_resource type="Texture2D" uid="uid://t7k1savo0vd4" path="res://Assets/Monsters/sprSkeleton1.png" id="1_wfoe2"]
+[ext_resource type="Script" uid="uid://hhmajge4yiub" path="res://data/Enemy.gd" id="2_8nrqg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8atk"]
+atlas = ExtResource("1_wfoe2")
+region = Rect2(0, 0, 19, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hrti"]
+atlas = ExtResource("1_wfoe2")
+region = Rect2(19, 0, 19, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y3hbo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8atk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hrti")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="Resource" id="Resource_a8atk"]
+script = ExtResource("2_8nrqg")
+Sprite = SubResource("SpriteFrames_y3hbo")
+Health = 40
+Name = "Skeleton"
+Damage = 10
+ProbAtt = 0.4
+ProbDef = 0.9
+metadata/_custom_type_script = "uid://hhmajge4yiub"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bt0qx"]
+radius = 6.0
+height = 20.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frkm6"]
+atlas = ExtResource("1_wfoe2")
+region = Rect2(19, 0, 19, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8nrqg"]
+atlas = ExtResource("1_wfoe2")
+region = Rect2(0, 0, 19, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mgg6u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frkm6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8nrqg")
+}],
+"loop": true,
+"name": &"Default",
+"speed": 2.0
+}]
+
+[node name="Skeleton" type="CharacterBody2D" unique_id=309149276]
+script = ExtResource("1_frkm6")
+data = SubResource("Resource_a8atk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=831278325]
+shape = SubResource("CapsuleShape2D_bt0qx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1406412377]
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_mgg6u")
+animation = &"Default"
+frame_progress = 0.7392027

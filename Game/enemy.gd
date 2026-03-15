@@ -18,9 +18,9 @@ func decide():
 		return
 	
 	var random = randf()
-	if random < 0.55:
+	if random < data.ProbAtt:
 		enemy_attack.emit()
-	elif random < 0.85:
+	elif random < data.ProbDef:
 		enemy_defend.emit()
 	else:
 		enemy_heal.emit()

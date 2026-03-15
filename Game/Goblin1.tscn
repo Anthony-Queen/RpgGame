@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://kjfnrdewni3"]
+[gd_scene format=3 uid="uid://xgsav4gdgfw1"]
 
 [ext_resource type="Script" uid="uid://cjj8j0tb0whko" path="res://Game/enemy.gd" id="1_g76rv"]
 [ext_resource type="Texture2D" uid="uid://cg4ykckeitm4w" path="res://Assets/Monsters/sprGoblin1.png" id="1_pec68"]
@@ -47,6 +47,8 @@ Sprite = SubResource("SpriteFrames_0a23w")
 Health = 30
 Name = "Goblin"
 Damage = 5
+ProbAtt = 0.55
+ProbDef = 0.85
 metadata/_custom_type_script = "uid://hhmajge4yiub"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vmgcn"]

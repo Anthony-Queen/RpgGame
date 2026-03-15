@@ -10,9 +10,9 @@ var player: Node = null
 # Player Stats
 var current_hp: float = max_hp
 var current_mana: float
-var max_hp: float = 40
+var max_hp: float = 50
 var max_mana: float = 20
-var damage: float = 10
+var strength: float = 1
 var speed: float = 1
 
 func _init():
