@@ -1,5 +1,6 @@
 extends Node
 
+var defeated_enemies = []
 var current_enemy #THIS is the Enemy Resource with the stats 
 var current_enemy_node #And THIS is the Enemy node, with the script and allat
 # Player Variables
@@ -14,9 +15,9 @@ var max_mana: float = 20
 var damage: float = 10
 var speed: float = 1
 
-#func _init():
-#	current_hp = max_hp
-#	current_mana = max_mana
+func _init():
+	current_hp = max_hp
+	current_mana = max_mana
 
 func show_battle(enemy):
 	if currentPlayerState == PlayerState.Combat:

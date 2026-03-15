@@ -7,18 +7,17 @@ signal death
 
 func _ready():
 	add_to_group("enemy")
-	#Battle.EnemyTurn.connect(decide)
 
 func decide():
 	if data.Health <= 0:
 		print("Health is Zero")
+		data.is_dead = true
 		Globals.currentPlayerState = Globals.PlayerState.Exploring
 		Globals.show_battle(Globals.current_enemy_node)
 		death.emit()
 		return
 	
 	var random = randf()
-	print(random)
 	if random < 0.55:
 		enemy_attack.emit()
 	elif random < 0.85:

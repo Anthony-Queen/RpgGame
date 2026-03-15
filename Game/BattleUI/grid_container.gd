@@ -15,10 +15,34 @@ func _ready():
 
 
 func _on_attack_1_pressed() -> void:
-	if Globals.current_enemy:
-		Globals.current_enemy.Health -= Weapon.damage
-		print("Weapon Damage:", Weapon.damage)
+	Globals.current_enemy.Health -= Weapon.damage
+	print(Globals.current_enemy.Health)
+	Battle.ChangeTurn(Globals.current_enemy_node)
+
+
+func _on_attack_2_pressed() -> void:
+	if Globals.current_mana >= Ice.mana:
+		Globals.current_mana -= Ice.mana
+		Globals.current_enemy.Health -= Ice.damage
 		print(Globals.current_enemy.Health)
 		Battle.ChangeTurn(Globals.current_enemy_node)
 	else:
-		print("No enemy assigned!")
+		print("No Mana!")
+
+func _on_attack_3_pressed() -> void:
+	if Globals.current_mana >= FireBall.mana:
+		Globals.current_mana -= FireBall.mana
+		Globals.current_enemy.Health -= FireBall.damage
+		print(Globals.current_enemy.Health)
+		Battle.ChangeTurn(Globals.current_enemy_node)
+	else:
+		print("No Mana!")
+
+func _on_attack_4_pressed() -> void:
+	if Globals.current_mana >= Darkness.mana:
+		Globals.current_mana -= Darkness.mana
+		Globals.current_enemy.Health -= Darkness.damage
+		print(Globals.current_enemy.Health)
+		Battle.ChangeTurn(Globals.current_enemy_node)
+	else:
+		print("No Mana")

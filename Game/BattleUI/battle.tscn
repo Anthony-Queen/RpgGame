@@ -332,6 +332,9 @@ position = Vector2(10, 631)
 position = Vector2(577, 325)
 
 [connection signal="pressed" from="PanelContainer/AttackPanel/GridContainer/Attack1" to="PanelContainer/AttackPanel/GridContainer" method="_on_attack_1_pressed"]
+[connection signal="pressed" from="PanelContainer/AttackPanel/GridContainer/Attack2" to="PanelContainer/AttackPanel/GridContainer" method="_on_attack_2_pressed"]
+[connection signal="pressed" from="PanelContainer/AttackPanel/GridContainer/Attack3" to="PanelContainer/AttackPanel/GridContainer" method="_on_attack_3_pressed"]
+[connection signal="pressed" from="PanelContainer/AttackPanel/GridContainer/Attack4" to="PanelContainer/AttackPanel/GridContainer" method="_on_attack_4_pressed"]
 [connection signal="pressed" from="VBoxContainer/Panel/Attack" to="." method="_on_attack_pressed"]
 [connection signal="pressed" from="VBoxContainer/Panel/Guard" to="." method="_on_guard_pressed"]
 [connection signal="pressed" from="VBoxContainer/Panel/Item" to="." method="_on_item_pressed"]

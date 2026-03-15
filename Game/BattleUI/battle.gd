@@ -21,7 +21,7 @@ func _ready():
 		call_deferred("ChangeTurn", current[0])
 
 func _process(delta):
-	if Globals.current_enemy_node != null and has_node("Panel/HP") and has_node("Enemy/EnemySprite"):
+	if Globals.current_enemy_node != null and has_node("Panel/HP") and has_node("Enemy/EnemySprite"): 
 		updateHp()
 # Setup enemy sprite
 		$Enemy/EnemySprite.sprite_frames = Globals.current_enemy.Sprite
@@ -37,9 +37,9 @@ func ChangeTurn(current):
 		PlayerTurn.emit()
 		print("Player is playing")
 	else:
-		EnemyTurn.emit()
-		print("Enemy is playing")
 		current.decide()
+		print("Enemy Boutta Act")
+		EnemyTurn.emit()
 
 func _on_enemy_attack():
 	print("enemy atatcked")
@@ -59,7 +59,7 @@ func _on_enemy_heal():
 	ChangeTurn(Player)
 
 func updateHp():
-	Globals.current_hp -= 0.01 # Fixes a bug that makes HpBar go to 0 (Idek why this happens tbh, but doing this fixes it.)
+	Globals.current_hp -= 0.000001 # Fixes a bug that makes HpBar go to 0 (Idek why this happens tbh, but doing this fixes it.)
 	$Panel/HP.update_bar(
 			Globals.current_hp,
 			Globals.max_hp
