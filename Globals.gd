@@ -2,7 +2,7 @@ extends Node
 
 var current_enemy #THIS is the Enemy Resource with the stats 
 var current_enemy_node #And THIS is the Enemy node, with the script and allat
-#Player Variables
+# Player Variables
 enum PlayerState { Exploring, Combat }
 var currentPlayerState = PlayerState.Exploring
 var player: Node = null

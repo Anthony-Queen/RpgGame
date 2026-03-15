@@ -3,3 +3,8 @@ extends Node2D
 
 func _ready():
 	player.combat_started.connect(Globals.show_battle)
+	if Globals.current_enemy_node:
+		Globals.current_enemy_node.death.connect(removeEnemy)
+
+func removeEnemy():
+	remove_child($Goblin1)

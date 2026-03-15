@@ -34,6 +34,7 @@ func onEnemy():
 		var body = collision.get_collider()
 		
 		if body.is_in_group("enemy") and Globals.currentPlayerState != Globals.PlayerState.Combat:
+			Globals.currentPlayerState = Globals.PlayerState.Exploring
 			enter_combat(body)
 
 func enter_combat(enemy):
