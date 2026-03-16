@@ -1,0 +1,8 @@
+~ start
+King Arthur: You beast of Satan! I didn't ACTUALLY think you would be able to kill a Skeleton you FREAK
+- Easy Work
+	King Arthur: Oh yeah? Wel let's see how you fare against an actual HUMAN, and a PRIEST at that!
+- It was quite hard
+	King Arthur: Don't care, didn't ask, bring in the priest and execute this FREAK
+do Globals.spawn_priest()
+=> END

@@ -1,5 +1,8 @@
 extends Node
 
+# Very IMPORTANT, chooses which dialogue to show after u kill the enemy
+var WhichDialogue = 0
+
 var defeated_enemies = []
 var current_enemy #THIS is the Enemy Resource with the stats 
 var current_enemy_node #And THIS is the Enemy node, with the script and allat
@@ -31,8 +34,21 @@ func show_battle(enemy):
 	elif currentPlayerState == PlayerState.Exploring:
 		get_tree().change_scene_to_file("res://Game/Main.tscn")
 
+# Functions for spawning enemies (Since it's not modular, cause it's easier)
 func spawn_goblin():
 	var pre_enemy = preload("res://Game/Goblin1.tscn")
+	var enemy = pre_enemy.instantiate()
+	enemy.global_position = Vector2(-50, 200)
+	add_child(enemy)
+
+func spawn_skeleton():
+	var pre_enemy = preload("res://Game/Enemies/Skeleton.tscn")
+	var enemy = pre_enemy.instantiate()
+	enemy.global_position = Vector2(-50, 200)
+	add_child(enemy)
+
+func spawn_priest():
+	var pre_enemy = preload("res://Game/Enemies/Priest3.tscn")
 	var enemy = pre_enemy.instantiate()
 	enemy.global_position = Vector2(-50, 200)
 	add_child(enemy)

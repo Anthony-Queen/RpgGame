@@ -1,0 +1,9 @@
+~ start
+King Arthur: Ayo, you killed the Goblin!
+King Arthur: Well that was easy, let's see how you fare against a Skeleton!
+- A Skeleton???
+	King Arthur: Yeah, they're pretty weak creatures, but just a bit stronger then Goblins
+- Sure, easy
+	King Arthur: Your confidence will be the end of you, FREAK
+do Globals.spawn_skeleton()
+=> END

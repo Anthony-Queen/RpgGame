@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c6op64e7a3ofr"
+path="res://.godot/imported/DemoEnd.dialogue-e70a15101694832c84e6db0987e6ceeb.tres"
+
+[deps]
+
+source_file="res://Dialogues/DemoEnd.dialogue"
+dest_files=["res://.godot/imported/DemoEnd.dialogue-e70a15101694832c84e6db0987e6ceeb.tres"]
+
+[params]
+
+defaults=true
