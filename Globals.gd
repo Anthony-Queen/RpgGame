@@ -3,13 +3,17 @@ extends Node
 # Very IMPORTANT, chooses which dialogue to show after u kill the enemy
 var WhichDialogue = 0
 
+# Enemy Variavbles
+var isEnemyDefending = false
 var defeated_enemies = []
 var current_enemy #THIS is the Enemy Resource with the stats 
 var current_enemy_node #And THIS is the Enemy node, with the script and allat
+
 # Player Variables
 enum PlayerState { Exploring, Combat }
 var currentPlayerState = PlayerState.Exploring
 var player: Node = null
+var isPlayerDefending = false
 # Player Stats
 var current_hp: float = max_hp
 var current_mana: float

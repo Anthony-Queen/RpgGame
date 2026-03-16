@@ -43,13 +43,18 @@ func ChangeTurn(current):
 
 func _on_enemy_attack():
 	print("enemy atatcked")
-	Globals.current_hp -= enemy.Damage
-	updateHp()
-	ChangeTurn(Player)
+	if Globals.isPlayerDefending == false:
+		Globals.current_hp -= enemy.Damage
+		updateHp()
+		ChangeTurn(Player)
+	else:
+		Globals.current_hp -= enemy.Damage * 0.5
+		updateHp()
+		ChangeTurn(Player)
 
 func _on_enemy_defend():
 	print("Enemy defended")
-	#Gotta figure out how to reduce player dmg by %
+	Globals.isEnemyDefending = true
 	ChangeTurn(Player)
 
 func _on_enemy_heal():
@@ -68,16 +73,22 @@ func updateHp():
 func on_combat_started(enemy):
 	print("Combat started")
 
-# Next 5 Functions are for Showinf relevant Panels
+func _on_guard_button_pressed() -> void:
+	$PanelContainer/GuardPanel/Label.text = "  Guarding"
+	ChangeTurn(Globals.current_enemy_node)
+
+# Next Functions are for Showing relevant Panels
 func show_panel(name):
 	for panel in $PanelContainer.get_children():
 		panel.visible = false
 	$PanelContainer.get_node(name).visible = true
-	
+
 func _on_attack_pressed() -> void:
+	$PanelContainer/AttackPanel.visible = true
 	show_panel("AttackPanel")
 
 func _on_guard_pressed() -> void:
+	$PanelContainer/GuardPanel.visible = true
 	show_panel("GuardPanel")
 
 func _on_item_pressed() -> void:

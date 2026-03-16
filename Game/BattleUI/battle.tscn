@@ -7,9 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://j1el13fh36cp" path="res://Game/BattleUI/HpBar.tscn" id="6_me0kk"]
 [ext_resource type="PackedScene" uid="uid://djgfplha35meq" path="res://Game/Player.tscn" id="7_o1152"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ohkfk"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hgfeg"]
 bg_color = Color(0, 0, 0, 1)
-corner_detail = 1
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n5k1x"]
 
@@ -113,21 +112,23 @@ texture = ExtResource("1_n5k1x")
 expand_mode = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=238621733]
+z_index = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.666
-anchor_top = 0.731
+anchor_left = 0.66400003
+anchor_top = 0.73300004
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.9039917
-offset_top = 1.4230042
+offset_left = 0.40197754
+offset_top = 0.12298584
 offset_right = -1.0
 offset_bottom = -1.888977
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ohkfk")
+theme_override_styles/panel = SubResource("StyleBoxFlat_hgfeg")
 
 [node name="AttackPanel" type="Panel" parent="PanelContainer" unique_id=1493199878]
+visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_n5k1x")
 
@@ -182,8 +183,32 @@ text = "Attack"
 icon = SubResource("CanvasTexture_ohkfk")
 
 [node name="GuardPanel" type="Panel" parent="PanelContainer" unique_id=746554177]
+visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_d08l8")
+
+[node name="GuardButton" type="Button" parent="PanelContainer/GuardPanel" unique_id=939200293]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.99500006
+anchor_bottom = 0.73700005
+offset_right = 0.9299927
+offset_bottom = 0.0034713745
+theme_override_font_sizes/font_size = 70
+text = "Defend"
+
+[node name="Label" type="Label" parent="PanelContainer/GuardPanel" unique_id=662370389]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.74300003
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.025756836
+offset_right = -3.0
+offset_bottom = -0.11102295
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
 
 [node name="ItemPanel" type="Panel" parent="PanelContainer" unique_id=1233575486]
 layout_mode = 2
@@ -335,6 +360,7 @@ position = Vector2(577, 325)
 [connection signal="pressed" from="PanelContainer/AttackPanel/GridContainer/Attack2" to="PanelContainer/AttackPanel/GridContainer" method="_on_attack_2_pressed"]
 [connection signal="pressed" from="PanelContainer/AttackPanel/GridContainer/Attack3" to="PanelContainer/AttackPanel/GridContainer" method="_on_attack_3_pressed"]
 [connection signal="pressed" from="PanelContainer/AttackPanel/GridContainer/Attack4" to="PanelContainer/AttackPanel/GridContainer" method="_on_attack_4_pressed"]
+[connection signal="pressed" from="PanelContainer/GuardPanel/GuardButton" to="." method="_on_guard_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Panel/Attack" to="." method="_on_attack_pressed"]
 [connection signal="pressed" from="VBoxContainer/Panel/Guard" to="." method="_on_guard_pressed"]
 [connection signal="pressed" from="VBoxContainer/Panel/Item" to="." method="_on_item_pressed"]
