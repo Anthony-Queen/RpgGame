@@ -20,7 +20,7 @@ func _on_attack_1_pressed() -> void:
 		print(Globals.current_enemy.Health)
 		Battle.ChangeTurn(Globals.current_enemy_node)
 	else:
-		Globals.current_enemy.Health -= Weapon.damage * 0.4
+		Globals.current_enemy.Health -= Weapon.damage * 0.3
 		print(Globals.current_enemy.Health)
 		Battle.ChangeTurn(Globals.current_enemy_node)
 
@@ -36,7 +36,7 @@ func _on_attack_2_pressed() -> void:
 	else:
 		if Globals.current_mana >= Ice.mana:
 			Globals.current_mana -= Ice.mana
-			Globals.current_enemy.Health -= Ice.damage * 0.4
+			Globals.current_enemy.Health -= Ice.damage * 0.3
 			print(Globals.current_enemy.Health)
 			Battle.ChangeTurn(Globals.current_enemy_node)
 		else:
@@ -54,7 +54,7 @@ func _on_attack_3_pressed() -> void:
 	else:
 		if Globals.current_mana >= FireBall.mana:
 			Globals.current_mana -= FireBall.mana
-			Globals.current_enemy.Health -= FireBall.damage * 0.4
+			Globals.current_enemy.Health -= FireBall.damage * 0.3
 			print(Globals.current_enemy.Health)
 			Battle.ChangeTurn(Globals.current_enemy_node)
 		else:
@@ -72,7 +72,7 @@ func _on_attack_4_pressed() -> void:
 	else:
 		if Globals.current_mana >= Darkness.mana:
 			Globals.current_mana -= Darkness.mana
-			Globals.current_enemy.Health -= Darkness.damage * 0.4
+			Globals.current_enemy.Health -= Darkness.damage * 0.3
 			print(Globals.current_enemy.Health)
 			Battle.ChangeTurn(Globals.current_enemy_node)
 		else:

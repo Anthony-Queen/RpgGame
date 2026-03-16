@@ -13,5 +13,7 @@ King Arthur: You're an elf though, aren't you?
 	King Arthur: And? Yo ass is literally an impure race bro, fym And?
 King Arthur: Anyways, any last words before we spawn the first enemy?
 King Arthur: Just kidding, I don't care, see you in hell FREAK
+Developer: Btw, the enemy attacks and your attack are instant, since this is a rushed demo I couldn't add any fancy effetc, sorry!
+
 do Globals.spawn_goblin()
 => END

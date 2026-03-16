@@ -25,7 +25,6 @@ func decide():
 	else:
 		enemy_heal.emit()
 
-
 func _physics_process(_delta):
 	if velocity.length() == 0:
 		$AnimatedSprite2D.play("Default")

@@ -56,3 +56,11 @@ func spawn_priest():
 	var enemy = pre_enemy.instantiate()
 	enemy.global_position = Vector2(-50, 200)
 	add_child(enemy)
+
+"func shake(sprite):
+	sprite.global_position += Vector2(50, 0)
+	await get_tree().create_timer(0.2).timeout
+	sprite.global_position -= Vector2(100, 0)
+	await get_tree().create_timer(0.2).timeout
+	sprite.global_position += Vector2(50, 0)
+"
