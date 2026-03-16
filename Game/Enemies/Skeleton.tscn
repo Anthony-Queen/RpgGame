@@ -70,6 +70,7 @@ data = SubResource("Resource_a8atk")
 shape = SubResource("CapsuleShape2D_bt0qx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1406412377]
+z_index = 1
 position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_mgg6u")
 animation = &"Default"

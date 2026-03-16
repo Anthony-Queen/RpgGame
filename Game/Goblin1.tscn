@@ -82,6 +82,7 @@ script = ExtResource("1_g76rv")
 data = SubResource("Resource_qtvgc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=733545738]
+z_index = 1
 sprite_frames = SubResource("SpriteFrames_a8m7i")
 animation = &"Default"
 autoplay = "Default"

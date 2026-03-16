@@ -66,6 +66,7 @@ script = ExtResource("1_juvqr")
 data = SubResource("Resource_nyqh5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=436302008]
+z_index = 1
 sprite_frames = SubResource("SpriteFrames_smt0s")
 animation = &"Default"
 autoplay = "Default"

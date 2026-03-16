@@ -30,3 +30,9 @@ func show_battle(enemy):
 		
 	elif currentPlayerState == PlayerState.Exploring:
 		get_tree().change_scene_to_file("res://Game/Main.tscn")
+
+func spawn_goblin():
+	var pre_enemy = preload("res://Game/Goblin1.tscn")
+	var enemy = pre_enemy.instantiate()
+	enemy.global_position = Vector2(-50, 200)
+	add_child(enemy)
