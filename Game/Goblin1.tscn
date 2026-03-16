@@ -84,6 +84,7 @@ data = SubResource("Resource_qtvgc")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=733545738]
 sprite_frames = SubResource("SpriteFrames_a8m7i")
 animation = &"Default"
+autoplay = "Default"
 frame_progress = 0.6140203
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=918859721]

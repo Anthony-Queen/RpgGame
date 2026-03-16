@@ -25,7 +25,7 @@ func _process(delta):
 		updateHp()
 # Setup enemy sprite
 		$Enemy/EnemySprite.sprite_frames = Globals.current_enemy.Sprite
-		$Enemy/EnemySprite.play("default")
+		$Enemy/EnemySprite.play("Default")
 		$Player/Camera2D.enabled = false
 		
 		# Stop running

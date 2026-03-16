@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://djgfplha35meq" path="res://Game/Player.tscn" id="3_haytw"]
 [ext_resource type="Texture2D" uid="uid://piod0ja857t" path="res://Assets/2DPixelDungeon/character and tileset/Dungeon_Tileset.png" id="3_rl4yr"]
 [ext_resource type="PackedScene" uid="uid://xgsav4gdgfw1" path="res://Game/Goblin1.tscn" id="4_3xx61"]
+[ext_resource type="PackedScene" uid="uid://fbsog10a2p4i" path="res://Game/Enemies/Priest3.tscn" id="5_g5pn2"]
+[ext_resource type="PackedScene" uid="uid://dvfpx4ncumj5x" path="res://Game/Enemies/Skeleton.tscn" id="7_haytw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vdl71"]
 texture = ExtResource("2_g5pn2")
@@ -293,9 +295,17 @@ tile_map_data = PackedByteArray("AAD7/xQAAAACAAEAAAD7/xMAAAACAAEAAAD7/xIAAAACAAE
 tile_set = SubResource("TileSet_pkw43")
 
 [node name="Goblin1" parent="." unique_id=2031590329 instance=ExtResource("4_3xx61")]
-position = Vector2(25, 205)
+position = Vector2(75.037865, 218.98703)
 rotation = 1.6174791
+
+[node name="Priest3" parent="." unique_id=206061539 instance=ExtResource("5_g5pn2")]
+position = Vector2(-18.961956, 220.0033)
+rotation = 1.5877218
 
 [node name="Player" parent="." unique_id=1667957523 instance=ExtResource("3_haytw")]
 position = Vector2(27, 359)
 rotation = 1.619271
+
+[node name="Skeleton" parent="." unique_id=309149276 instance=ExtResource("7_haytw")]
+position = Vector2(30.037704, 217.99483)
+rotation = 1.5517055

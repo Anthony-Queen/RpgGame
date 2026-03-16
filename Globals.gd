@@ -14,6 +14,7 @@ var max_hp: float = 50
 var max_mana: float = 20
 var strength: float = 1
 var speed: float = 1
+var current_xp
 
 func _init():
 	current_hp = max_hp

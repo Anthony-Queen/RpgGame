@@ -1,67 +1,77 @@
 [gd_scene format=3 uid="uid://fbsog10a2p4i"]
 
-[ext_resource type="Texture2D" uid="uid://yaeut8emipdi" path="res://Assets/2DPixelDungeon/Character_animation/priests_idle/priest3/v2/priest3_v2_1.png" id="1_8lp7j"]
-[ext_resource type="Script" uid="uid://cjj8j0tb0whko" path="res://Game/enemy.gd" id="1_juvqr"]
+[ext_resource type="Script" uid="uid://fa1rh1unex3a" path="res://Game/Enemies/priest_3.gd" id="1_juvqr"]
 [ext_resource type="Script" uid="uid://hhmajge4yiub" path="res://data/Enemy.gd" id="2_5lc1m"]
-[ext_resource type="Texture2D" uid="uid://b863yowiqmisr" path="res://Assets/2DPixelDungeon/Character_animation/priests_idle/priest3/v2/priest3_v2_2.png" id="2_juvqr"]
-[ext_resource type="Texture2D" uid="uid://dc6dxo4qgrxgo" path="res://Assets/2DPixelDungeon/Character_animation/priests_idle/priest3/v2/priest3_v2_3.png" id="3_5lc1m"]
-[ext_resource type="Texture2D" uid="uid://c1m2xit8xckho" path="res://Assets/2DPixelDungeon/Character_animation/priests_idle/priest3/v2/priest3_v2_4.png" id="4_nyqh5"]
+[ext_resource type="Texture2D" uid="uid://nqtk7l8p3g2u" path="res://Assets/2DPixelDungeon/Character_animation/priests_idle/priest3/v1/priest3_v1_1.png" id="2_7ph4b"]
+[ext_resource type="Texture2D" uid="uid://bfpsfogg2v3x4" path="res://Assets/2DPixelDungeon/Character_animation/priests_idle/priest3/v1/priest3_v1_2.png" id="3_530fc"]
+[ext_resource type="Texture2D" uid="uid://bstfymu0pexfv" path="res://Assets/2DPixelDungeon/Character_animation/priests_idle/priest3/v1/priest3_v1_3.png" id="4_smt0s"]
+[ext_resource type="Texture2D" uid="uid://dqusdu4v8ktp5" path="res://Assets/2DPixelDungeon/Character_animation/priests_idle/priest3/v1/priest3_v1_4.png" id="5_oupjk"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_nyqh5"]
-
-[sub_resource type="Resource" id="Resource_nb1wy"]
-script = ExtResource("2_5lc1m")
-Sprite = SubResource("SpriteFrames_nyqh5")
-metadata/_custom_type_script = "uid://hhmajge4yiub"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nb1wy"]
-atlas = ExtResource("1_8lp7j")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_23hpu"]
-atlas = ExtResource("2_juvqr")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7ph4b"]
-atlas = ExtResource("3_5lc1m")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_530fc"]
-atlas = ExtResource("4_nyqh5")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_smt0s"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_5lc1m"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nb1wy")
+"texture": ExtResource("2_7ph4b")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_23hpu")
+"texture": ExtResource("3_530fc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7ph4b")
+"texture": ExtResource("4_smt0s")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_530fc")
+"texture": ExtResource("5_oupjk")
 }],
 "loop": true,
 "name": &"Default",
 "speed": 5.0
 }]
 
+[sub_resource type="Resource" id="Resource_nyqh5"]
+script = ExtResource("2_5lc1m")
+Sprite = SubResource("SpriteFrames_5lc1m")
+Health = 100
+Name = "Priest"
+Damage = 20
+ProbAtt = 0.6
+ProbDef = 0.2
+metadata/_custom_type_script = "uid://hhmajge4yiub"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_smt0s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7ph4b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_530fc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_smt0s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_oupjk")
+}],
+"loop": true,
+"name": &"Default",
+"speed": 2.0
+}]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oupjk"]
-radius = 7.0
-height = 20.0
+radius = 5.0
+height = 14.0
 
 [node name="Priest3" type="CharacterBody2D" unique_id=206061539]
 script = ExtResource("1_juvqr")
-data = SubResource("Resource_nb1wy")
+data = SubResource("Resource_nyqh5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=436302008]
 sprite_frames = SubResource("SpriteFrames_smt0s")
 animation = &"Default"
-frame_progress = 0.51781106
+autoplay = "Default"
+frame = 3
+frame_progress = 0.70911604
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1155692691]
+position = Vector2(-1, 0)
 shape = SubResource("CapsuleShape2D_oupjk")
