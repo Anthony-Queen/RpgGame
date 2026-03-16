@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://j65an4y81aac"
+path="res://.godot/imported/MainExplanation.dialogue-6dab4faabd716399af158e5cc1d5f3e0.tres"
+
+[deps]
+
+source_file="res://Dialogues/MainExplanation.dialogue"
+dest_files=["res://.godot/imported/MainExplanation.dialogue-6dab4faabd716399af158e5cc1d5f3e0.tres"]
+
+[params]
+
+defaults=true

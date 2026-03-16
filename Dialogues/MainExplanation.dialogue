@@ -1,0 +1,16 @@
+~ start
+Unknown: You've finally woken up, elf.
+- Who are You?
+	Unknwon: Me? I am KING ARTHUR THE THIRD, but of course you knew that[speed=0.2]...[speed=1] You knew that, right?
+	=> start
+- Where am I?
+	King Arthur: You're in the colosseum of course. You will fight until you either die or kill everyone, included me, King Arthur the Third
+Player: Whar? I didn't do anything wrong.
+King Arthur: You're an elf though, aren't you?
+- No? (Lie)
+	King Arthur: Freaky Ahh Liar, of course you're an elf, just look at those freaky pointy ears, you're a FREAK.
+- Yeah, and? (Truth)
+	King Arthur: And? Yo ass is literally an impure race bro, fym And?
+King Arthur: Anyways, any last words before we spawn the first enemy?
+King Arthur: Just kidding, I don't care, see you in hell FREAK
+=> END
