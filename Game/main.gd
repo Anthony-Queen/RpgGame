@@ -22,8 +22,3 @@ func _ready():
 	else:
 		Globals.WhichDialogue += 1
 		DialogueManager.show_dialogue_balloon(DemoEnd, "start")
-
-# Remove enemy if it's dead
-	for enemy in get_tree().get_nodes_in_group("enemy"):
-		if enemy.data.is_dead:
-			enemy.queue_free()

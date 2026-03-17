@@ -59,7 +59,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Default",
-"speed": 2.0
+"speed": 3.0
 }]
 
 [node name="Skeleton" type="CharacterBody2D" unique_id=309149276]
@@ -75,4 +75,4 @@ position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_mgg6u")
 animation = &"Default"
 autoplay = "Default"
-frame_progress = 0.7392027
+frame_progress = 0.2804273

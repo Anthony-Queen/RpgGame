@@ -33,7 +33,7 @@ func _check_level_up() -> void:
 	var levels_gained := 0
 	while current_xp >= level_table.xp_to_next(level) and level < level_table.max_level:
 		var xp_required = level_table.xp_to_next(level)
-		current_xp = xp_required
+		current_xp -= xp_required
 		level += 1
 		levels_gained += 1
 		var res = class_data.apply_level_up(attribute_data, 1)

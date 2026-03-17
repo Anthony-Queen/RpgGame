@@ -14,7 +14,7 @@ func decide():
 		data.is_dead = true
 		Globals.currentPlayerState = Globals.PlayerState.Exploring
 		Globals.show_battle(Globals.current_enemy_node)
-		death.emit()
+		#death.emit()
 		return
 	
 	var random = randf()

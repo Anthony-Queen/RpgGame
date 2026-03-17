@@ -16,7 +16,7 @@ func _ready():
 
 func _on_attack_1_pressed() -> void:
 	if Globals.isEnemyDefending == false:
-		Globals.current_enemy.Health -= Weapon.damage
+		Globals.current_enemy.Health -= Weapon.damage * 10
 		print(Globals.current_enemy.Health)
 		Battle.ChangeTurn(Globals.current_enemy_node)
 	else:

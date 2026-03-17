@@ -18,7 +18,7 @@ var isPlayerDefending = false
 var current_hp: float = max_hp
 var current_mana: float
 var max_hp: float = 50
-var max_mana: float = 20
+var max_mana: float = 100
 var strength: float = 1
 var speed: float = 1
 var current_xp
