@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="RPG"
-run/main_scene="uid://cmdkwetxbmq55"
+run/main_scene="uid://b51r5cq0qvkkf"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -28,7 +28,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/godot_super-wakatime/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/godot_super-wakatime/plugin.cfg", "res://addons/maaacks_credits_scene/plugin.cfg")
 
 [input]
 
@@ -61,6 +61,11 @@ right={
 [internationalization]
 
 locale/translations_pot_files=PackedStringArray("res://Dialogues/MainExplanation.dialogue", "res://Dialogues/Skeleton.dialogue", "res://Dialogues/Priest3.dialogue", "res://Dialogues/DemoEnd.dialogue")
+
+[maaacks_credits_scene]
+
+disable_update_check=false
+disable_install_wizard=true
 
 [physics]
 

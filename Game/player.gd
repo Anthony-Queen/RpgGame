@@ -27,6 +27,9 @@ func _physics_process(_delta):
 			play_walk_animation(direction)
 		else:
 			play_idle_animation(last_direction)
+	if Globals.currentPlayerState == 1 and Globals.current_hp <= 0:
+		get_tree().change_scene_to_file("res://Game/death_screen.tscn")
+	
 
 func onEnemy():
 	for i in range(get_slide_collision_count()):
