@@ -26,7 +26,7 @@ func _process(delta):
 # Setup enemy sprite
 		$Enemy/EnemySprite.sprite_frames = Globals.current_enemy.Sprite
 		$Enemy/EnemySprite.play("Default")
-		#$Enemy/EnemySprite.play("default")
+		$Enemy/EnemySprite.play("default")
 		$Player/Camera2D.enabled = false
 		
 	if Globals.current_enemy != null and Globals.current_enemy.is_dead == true and has_node("Panel/LevelSystem"):
