@@ -15,8 +15,8 @@ var currentPlayerState = PlayerState.Exploring
 var player: Node = null
 var isPlayerDefending = false
 # Player Stats
-var current_hp: float = max_hp
-var current_mana: float
+var current_hp: float = 50
+var current_mana: float = 100
 var max_hp: float = 50
 var max_mana: float = 100
 # Not used in demo
@@ -24,9 +24,6 @@ var strength: float = 1
 var speed: float = 1
 var current_xp
 
-#func _init():
-#	current_hp = max_hp
-#	current_mana = max_mana
 
 func show_battle(enemy):
 	if currentPlayerState == PlayerState.Combat:
@@ -34,12 +31,11 @@ func show_battle(enemy):
 		current_enemy = enemy.data
 		get_tree().change_scene_to_file("res://Game/BattleUI/battle.tscn")
 		
-		
-		
 	elif currentPlayerState == PlayerState.Exploring:
 		get_tree().change_scene_to_file("res://Game/Main.tscn")
 
-# Functions for spawning enemies (Since it's not modular, cause it's easier)
+
+# Functions for spawning enemies (It's not modular cause it's easier)
 func spawn_goblin():
 	var pre_enemy = preload("res://Game/Goblin1.tscn")
 	var enemy = pre_enemy.instantiate()

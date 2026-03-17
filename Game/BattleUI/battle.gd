@@ -20,7 +20,7 @@ func _ready():
 		
 		call_deferred("ChangeTurn", current[0])
 
-func _process(delta):
+func _process(_delta):
 	if Globals.current_enemy_node != null and has_node("Panel/HP") and has_node("Enemy/EnemySprite") and has_node("Panel/LevelSystem"): 
 		updateHp()
 # Setup enemy sprite
@@ -28,13 +28,6 @@ func _process(delta):
 		$Enemy/EnemySprite.play("Default")
 		$Enemy/EnemySprite.play("default")
 		$Player/Camera2D.enabled = false
-		
-	if Globals.current_enemy != null and Globals.current_enemy.is_dead == true and has_node("Panel/LevelSystem"):
-		print("Condition met")  # DEBUG
-		
-		$Panel/LevelSystem.add_xp(2000000)
-		print("Added Xp yay")
-
 		
 		# Stop running
 		set_process(false)
@@ -81,7 +74,7 @@ func updateHp():
 				Globals.max_hp
 			)
 
-func on_combat_started(enemy):
+func on_combat_started(_enemy):
 	print("Combat started")
 
 func _on_guard_button_pressed() -> void:

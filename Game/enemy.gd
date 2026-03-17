@@ -3,7 +3,6 @@ extends CharacterBody2D
 signal enemy_attack
 signal enemy_defend
 signal enemy_heal
-signal death
 
 func _ready():
 	add_to_group("enemy")
@@ -14,7 +13,6 @@ func decide():
 		data.is_dead = true
 		Globals.currentPlayerState = Globals.PlayerState.Exploring
 		Globals.show_battle(Globals.current_enemy_node)
-		#death.emit()
 		return
 	
 	var random = randf()

@@ -7,6 +7,8 @@ var Light = load("res://data/Attacks/Light.tres")
 var Darkness = load("res://data/Attacks/Darkness.tres")
 var Weapon = load("res://data/Attacks/Weapon.tres")
 
+
+
 func _ready():
 	$Attack1.text = Weapon.name
 	$Attack2.text = Ice.name
@@ -26,7 +28,7 @@ func _on_attack_1_pressed() -> void:
 
 func _on_attack_2_pressed() -> void:
 	if Globals.isEnemyDefending == false:
-		if Globals.current_mana <= Ice.mana:
+		if Globals.current_mana >= Ice.mana:
 			Globals.current_mana -= Ice.mana
 			Globals.current_enemy.Health -= Ice.damage
 			print(Globals.current_enemy.Health)
@@ -62,7 +64,9 @@ func _on_attack_3_pressed() -> void:
 
 func _on_attack_4_pressed() -> void:
 	if Globals.isEnemyDefending == false:
+		print(Globals.max_mana, Globals.current_mana)
 		if Globals.current_mana >= Darkness.mana:
+			print("YOU ATTACKED, OK?")
 			Globals.current_mana -= Darkness.mana
 			Globals.current_enemy.Health -= Darkness.damage
 			print(Globals.current_enemy.Health)
@@ -70,7 +74,9 @@ func _on_attack_4_pressed() -> void:
 		else:
 			print("No Mana!")
 	else:
+		print(Globals.current_mana, Globals.max_mana)
 		if Globals.current_mana >= Darkness.mana:
+			print("YOU ATTACKED, OK?")
 			Globals.current_mana -= Darkness.mana
 			Globals.current_enemy.Health -= Darkness.damage * 0.2
 			print(Globals.current_enemy.Health)

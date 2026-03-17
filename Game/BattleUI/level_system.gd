@@ -36,7 +36,7 @@ func _check_level_up() -> void:
 		current_xp -= xp_required
 		level += 1
 		levels_gained += 1
-		var res = class_data.apply_level_up(attribute_data, 1)
+		var _res = class_data.apply_level_up(attribute_data, 1)
 		
 		leveled_up.emit(level, 1)
 	
