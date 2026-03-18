@@ -4,10 +4,8 @@ extends Control
 @onready var enemy_node = Globals.current_enemy_node
 
 var CurrentTurn
-# TEST
 var current: Array = [Globals.current_enemy_node, Player]
 var x = randi() % 2
-# TESTEND
 signal PlayerTurn
 signal EnemyTurn
 
