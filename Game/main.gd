@@ -14,12 +14,9 @@ func _ready():
 	elif Globals.WhichDialogue == 1:
 		Globals.WhichDialogue += 1
 		# For now just level up without xp
-		Globals.max_hp += 20
+		Globals.max_hp += 50
 		Globals.current_hp = Globals.max_hp
-		
-		Globals.max_mana += 20
 		Globals.current_mana = Globals.max_mana
-		print(Globals.max_mana, Globals.current_mana)
 		
 		DialogueManager.show_dialogue_balloon(SkeletonDialogue, "start")
 		
@@ -27,12 +24,11 @@ func _ready():
 	elif Globals.WhichDialogue == 2:
 		Globals.WhichDialogue += 1
 		# Level up without xp
-		Globals.max_hp += 100
+		Globals.max_hp += 50
 		Globals.current_hp = Globals.max_hp
 		
-		Globals.max_mana += 100
+		Globals.max_mana += 50
 		Globals.current_mana = Globals.max_mana
-		print("Mana done")
 		
 		DialogueManager.show_dialogue_balloon(PriestDialogue, "start")
 		

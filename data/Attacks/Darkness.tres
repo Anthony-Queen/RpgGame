@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_j8yra")
 name = "Darkness"
-damage = 100.0
-mana = 100.0
+damage = 30.0
+mana = 30.0
 metadata/_custom_type_script = "uid://1xkn688bayty"
